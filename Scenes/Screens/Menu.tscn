@@ -10,10 +10,10 @@ __meta__ = {
 }
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 91.0
-margin_top = 71.0
-margin_right = 338.0
-margin_bottom = 159.0
+margin_left = 165.0
+margin_top = 92.0
+margin_right = 232.0
+margin_bottom = 120.0
 text = "Play"
 script = ExtResource( 1 )
 __meta__ = {

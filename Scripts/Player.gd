@@ -3,7 +3,7 @@ extends KinematicBody2D
 export var friction := 0.5
 export var max_speed := 100.0
 export var acceleration_speed := 25.0
-export var jump_speed := 250.0
+export var jump_speed := 350.0
 export var gravity := 20.0
 export var snapping_distance := 10.0
 
