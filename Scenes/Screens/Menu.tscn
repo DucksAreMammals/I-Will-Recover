@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Buttons/SceneChange.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 383.0
+margin_top = 255.0
+margin_right = 630.0
+margin_bottom = 343.0
+text = "Play"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene = "res://Scenes/Screens/Game.tscn"

@@ -11,7 +11,15 @@ config_version=4
 [application]
 
 config/name="Devcember"
+run/main_scene="res://Scenes/Screens/Menu.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1200
+window/size/height=675
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [physics]
 
