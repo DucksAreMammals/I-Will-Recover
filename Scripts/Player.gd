@@ -11,6 +11,7 @@ var velocity := Vector2.ZERO
 var acceleration := Vector2.ZERO
 var snapping := Vector2.DOWN
 var jumping := false
+var facing_right := true
 
 
 func _physics_process(_delta):
@@ -21,6 +22,7 @@ func _physics_process(_delta):
 	_apply_gravity()
 	_update_velocity()
 	_apply_velocity()
+	_apply_animation()
 
 
 func _apply_friction():
@@ -35,9 +37,11 @@ func _get_acceleration():
 
 	if Input.is_action_pressed("left"):
 		acceleration.x += -acceleration_speed * acceleration_speed
+		facing_right = false
 
 	if Input.is_action_pressed("right"):
 		acceleration.x += acceleration_speed * acceleration_speed
+		facing_right = true
 
 
 func _jump():
@@ -63,3 +67,16 @@ func _update_velocity():
 
 func _apply_velocity():
 	velocity = move_and_slide_with_snap(velocity, snapping * snapping_distance, Vector2.UP, true)
+
+
+func _apply_animation():
+	$AnimatedSprite.flip_h = not facing_right
+
+	if velocity.y > 0:
+		$AnimatedSprite.play("fall")
+	elif velocity.y < 0:
+		$AnimatedSprite.play("jump")
+	elif abs(velocity.x) <= .1:
+		$AnimatedSprite.play("idle")
+	else:
+		$AnimatedSprite.play("walk")
