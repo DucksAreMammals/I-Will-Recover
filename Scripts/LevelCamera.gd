@@ -37,7 +37,8 @@ func _tween_to_next():
 
 
 func _end_level():
-	pass
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://Scenes/Screens/Menu.tscn")
 
 
 func _death_area_entered(body):
