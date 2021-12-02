@@ -33,8 +33,10 @@ func _tween_to_next():
 
 	$Tween.start()
 
+
 func _end_level():
 	pass
+
 
 func _death_area_entered(body):
 	if body.is_in_group("player"):

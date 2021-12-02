@@ -34,7 +34,7 @@ func show_story():
 				text += "[color=#77ff77]"
 				text += line["line"]
 				text += "[/color]"
-		
+
 		text += "\n\n"
 
 	label.bbcode_text = text
