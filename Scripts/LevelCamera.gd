@@ -17,15 +17,22 @@ func _end_trigger_entered(body):
 func _end_section():
 	if section < section_max:
 		section += 1
+	else:
+		end_level()
 
-		$Tween.interpolate_property(
-			self,
-			"position",
-			position,
-			position + section_offset,
-			1,
-			Tween.TRANS_CUBIC,
-			Tween.EASE_IN_OUT
-		)
 
-		$Tween.start()
+func _tween_to_next():
+	$Tween.interpolate_property(
+		self,
+		"position",
+		position,
+		position + section_offset,
+		1,
+		Tween.TRANS_CUBIC,
+		Tween.EASE_IN_OUT
+	)
+
+	$Tween.start()
+
+func _end_level():
+	pass
