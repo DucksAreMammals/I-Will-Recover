@@ -17,7 +17,7 @@ func _ready():
 func show_story():
 	find_node("ExitButton").grab_focus()
 	get_tree().paused = true
-	
+
 	$Control.visible = true
 
 	story_bit = Global.story[story_key]
