@@ -95,12 +95,8 @@ func die():
 
 
 func _unstick():
-	var stuck = true
-
 	for stuck_raycast in stuck_raycasts:
 		if not stuck_raycast.is_colliding():
-			stuck = false
-			break
+			return
 
-	if stuck:
-		die()
+	die()
