@@ -23,7 +23,7 @@ func show_story():
 	for line in story_bit:
 		match line["speaker"]:
 			"internal":
-				text += "[color=#eaeaea]"
+				text += "[color=#aaaaaa]"
 				text += line["line"]
 				text += "[/color]"
 			"self":
@@ -34,7 +34,7 @@ func show_story():
 				text += "[color=#77ff77]"
 				text += line["line"]
 				text += "[/color]"
-
+		
 		text += "\n\n"
 
 	label.bbcode_text = text
