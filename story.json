@@ -1,0 +1,18 @@
+{
+	"denial_opening": [
+		{
+			"speaker": "internal",
+			"line": "Everything is fine. Nothing is wrong. I refuse to acknowledge it. It is not a problem. I am fine. Everyone is here. Everyone is okay."
+		},
+
+		{
+			"speaker": "dad",
+			"line": "Are you going to be okay?"
+		},
+
+		{
+			"speaker": "self",
+			"line": "Yes. I don't have any problems. I am perfectly fine."
+		}
+	]
+}

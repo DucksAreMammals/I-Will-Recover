@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tilemaps/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/GameObjects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/GameObjects/LevelCamera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/GameObjects/Listener.tscn" type="PackedScene" id=5]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 4 )
@@ -35,3 +36,7 @@ position = Vector2( 1264, 184 )
 
 [node name="RespawnPoint5" type="Position2D" parent="RespawnPoints"]
 position = Vector2( 1664, 184 )
+
+[node name="Listener" parent="." instance=ExtResource( 5 )]
+position = Vector2( 328, 184 )
+story_key = "denial_opening"

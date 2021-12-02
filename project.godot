@@ -14,6 +14,10 @@ config/name="Devcember"
 run/main_scene="res://Scenes/Screens/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Scripts/Global.gd"
+
 [display]
 
 window/size/width=400
