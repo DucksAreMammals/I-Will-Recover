@@ -11,9 +11,13 @@ onready var label = find_node("RichTextLabel")
 
 func _ready():
 	$Control.visible = false
+	find_node("ExitButton").connect("pressed", self, "_exit")
 
 
 func show_story():
+	find_node("ExitButton").grab_focus()
+	get_tree().paused = true
+	
 	$Control.visible = true
 
 	story_bit = Global.story[story_key]
@@ -38,3 +42,8 @@ func show_story():
 		text += "\n\n"
 
 	label.bbcode_text = text
+
+
+func _exit():
+	$Control.visible = false
+	get_tree().paused = false
