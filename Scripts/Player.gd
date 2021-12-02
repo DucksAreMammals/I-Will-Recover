@@ -12,6 +12,13 @@ var acceleration := Vector2.ZERO
 var snapping := Vector2.DOWN
 var jumping := false
 var facing_right := true
+var stuck_raycasts
+
+onready var level = get_parent()
+
+
+func _ready():
+	stuck_raycasts = [$StuckRay1, $StuckRay2, $StuckRay3, $StuckRay4]
 
 
 func _physics_process(_delta):
@@ -23,6 +30,7 @@ func _physics_process(_delta):
 	_update_velocity()
 	_apply_velocity()
 	_apply_animation()
+	_unstick()
 
 
 func _apply_friction():
@@ -80,3 +88,19 @@ func _apply_animation():
 		$AnimatedSprite.play("idle")
 	else:
 		$AnimatedSprite.play("walk")
+
+
+func die():
+	position = level.get_respawn_point()
+
+
+func _unstick():
+	var stuck = true
+
+	for stuck_raycast in stuck_raycasts:
+		if not stuck_raycast.is_colliding():
+			stuck = false
+			break
+
+	if stuck:
+		die()

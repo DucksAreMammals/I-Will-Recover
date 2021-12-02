@@ -17,3 +17,19 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "idle"
+
+[node name="StuckRay1" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 6 )
+
+[node name="StuckRay2" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, -6 )
+
+[node name="StuckRay3" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 4, 0 )
+
+[node name="StuckRay4" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -4, 0 )
