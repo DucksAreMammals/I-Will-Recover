@@ -19,5 +19,5 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scene = "res://Scenes/Screens/Game.tscn"
+scene = "res://Scenes/Screens/Levels/Denial.tscn"
 focus = true
