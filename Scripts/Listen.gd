@@ -11,6 +11,7 @@ onready var label = find_node("RichTextLabel")
 
 func _ready():
 	$Control.visible = false
+# warning-ignore:return_value_discarded
 	find_node("ExitButton").connect("pressed", self, "_exit")
 
 

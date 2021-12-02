@@ -4,6 +4,7 @@ export var story_key := ""
 
 
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("body_entered", self, "_listen")
 	$Listen.story_key = story_key
 

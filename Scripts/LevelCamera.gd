@@ -4,7 +4,9 @@ onready var level := get_parent()
 
 
 func _ready():
+# warning-ignore:return_value_discarded
 	$EndTrigger.connect("body_entered", self, "_end_trigger_entered")
+# warning-ignore:return_value_discarded
 	$DeathArea.connect("body_entered", self, "_death_area_entered")
 
 
