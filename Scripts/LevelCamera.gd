@@ -54,7 +54,7 @@ func _tween_to_next():
 	yield($Tween, "tween_all_completed")
 
 	is_tweening = false
-	$EndTrigger.monitoring = false
+	$EndTrigger.monitoring = true
 
 
 func _end_level():
