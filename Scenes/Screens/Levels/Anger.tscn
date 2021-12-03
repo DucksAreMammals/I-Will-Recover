@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tilemaps/TilesetAngry.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/AngerPlayer.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/vinette.tres" type="Texture" id=3]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/GameObjects/Listener.tscn" type="PackedScene" id=5]
 
@@ -69,12 +68,3 @@ pause_mode = 2
 root_node = NodePath("../..")
 anims/breathe = SubResource( 1 )
 script = ExtResource( 2 )
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-margin_right = 400.0
-margin_bottom = 225.0
-texture = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": true
-}

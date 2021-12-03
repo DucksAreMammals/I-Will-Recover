@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	load_level("Anger")
+	load_level("Denial")
 
 func load_level(level):
 	var nested_level = load("res://Scenes/Screens/Levels/" + level + ".tscn").instance()

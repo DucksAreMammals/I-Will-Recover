@@ -1,0 +1,9 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+void fragment(){
+	COLOR = vec4(0, 0, 0, sqrt(pow(abs(UV.x - 0.5), 2) + pow(abs(UV.y - 0.5), 2)));
+}
+"
