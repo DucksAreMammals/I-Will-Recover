@@ -23,6 +23,7 @@ onready var level = get_parent()
 func _ready():
 	stuck_raycasts = [$StuckRay1, $StuckRay2, $StuckRay3, $StuckRay4]
 
+
 func _physics_process(_delta):
 	_apply_friction()
 	_get_acceleration()
@@ -32,6 +33,7 @@ func _physics_process(_delta):
 	_apply_gravity()
 	_update_velocity()
 	_apply_velocity()
+	_collide()
 	_apply_animation()
 	_unstick()
 
@@ -88,6 +90,12 @@ func _apply_velocity():
 	velocity = move_and_slide_with_snap(velocity, snapping * snapping_distance, Vector2.UP, true)
 
 
+func _collide():
+	for i in get_slide_count():
+		if get_slide_collision(i).collider.is_in_group("hurt"):
+			die()
+
+
 func _apply_animation():
 	$AnimatedSprite.flip_h = not facing_right
 
@@ -111,6 +119,7 @@ func _unstick():
 			return
 
 	die()
+
 
 func set_vignette(material):
 	$Vignette.material = material
