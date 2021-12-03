@@ -1,6 +1,8 @@
 extends Camera2D
 
-var level
+signal win
+
+onready var level = get_parent()
 
 
 func _ready():
@@ -38,7 +40,7 @@ func _tween_to_next():
 
 func _end_level():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/Screens/Menu.tscn")
+	emit_signal("win")
 
 
 func _death_area_entered(body):

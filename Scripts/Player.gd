@@ -17,12 +17,11 @@ var grounded_y := 0.0
 var facing_right := true
 var stuck_raycasts
 
-var level
+onready var level = get_parent()
 
 
 func _ready():
 	stuck_raycasts = [$StuckRay1, $StuckRay2, $StuckRay3, $StuckRay4]
-
 
 func _physics_process(_delta):
 	_apply_friction()
@@ -112,3 +111,6 @@ func _unstick():
 			return
 
 	die()
+
+func set_vignette(material):
+	$Vignette.material = material
