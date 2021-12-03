@@ -17,7 +17,7 @@ var grounded_y := 0.0
 var facing_right := true
 var stuck_raycasts
 
-onready var level = get_parent()
+var level
 
 
 func _ready():

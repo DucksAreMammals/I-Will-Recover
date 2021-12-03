@@ -1,6 +1,6 @@
 extends Camera2D
 
-onready var level := get_parent()
+var level
 
 
 func _ready():
