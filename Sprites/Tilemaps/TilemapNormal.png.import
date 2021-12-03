@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tilemap.png-86972f5aee5d2bc9314691ea5cbd99a9.stex"
+path="res://.import/TilemapNormal.png-68823718637345b90573637a46f5df1e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilemaps/Tilemap.png"
-dest_files=[ "res://.import/Tilemap.png-86972f5aee5d2bc9314691ea5cbd99a9.stex" ]
+source_file="res://Sprites/Tilemaps/TilemapNormal.png"
+dest_files=[ "res://.import/TilemapNormal.png-68823718637345b90573637a46f5df1e.stex" ]
 
 [params]
 
