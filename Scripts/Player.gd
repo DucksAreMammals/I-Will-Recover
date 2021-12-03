@@ -6,11 +6,14 @@ export var acceleration_speed := 25.0
 export var jump_speed := 350.0
 export var gravity := 20.0
 export var snapping_distance := 10.0
+export var coyote_time := 100.0
 
 var velocity := Vector2.ZERO
 var acceleration := Vector2.ZERO
 var snapping := Vector2.DOWN
 var jumping := false
+var grounded_time := INF
+var grounded_y := 0.0
 var facing_right := true
 var stuck_raycasts
 
@@ -24,6 +27,7 @@ func _ready():
 func _physics_process(_delta):
 	_apply_friction()
 	_get_acceleration()
+	_set_grounded_time()
 	_jump()
 	_set_snapping()
 	_apply_gravity()
@@ -52,11 +56,19 @@ func _get_acceleration():
 		facing_right = true
 
 
+func _set_grounded_time():
+	if is_on_floor():
+		grounded_time = OS.get_ticks_msec()
+		grounded_y = position.y
+
+
 func _jump():
-	if Input.is_action_just_pressed("up") and is_on_floor():
+	if Input.is_action_just_pressed("up") and grounded_time + coyote_time > OS.get_ticks_msec():
+		position.y = grounded_y
+		velocity.y = 0
 		acceleration.y = -jump_speed
 		jumping = true
-	elif is_on_floor():
+	else:
 		jumping = false
 
 

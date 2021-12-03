@@ -29,7 +29,7 @@ position = Vector2( 448, 184 )
 position = Vector2( 848, 184 )
 
 [node name="RespawnPoint4" type="Position2D" parent="RespawnPoints"]
-position = Vector2( 1248, 184 )
+position = Vector2( 1248, 56 )
 
 [node name="RespawnPoint5" type="Position2D" parent="RespawnPoints"]
 position = Vector2( 1648, 184 )
