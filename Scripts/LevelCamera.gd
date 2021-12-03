@@ -2,6 +2,8 @@ extends Camera2D
 
 signal win
 
+var is_tweening := false
+
 onready var level = get_parent()
 
 
@@ -10,6 +12,15 @@ func _ready():
 	$EndTrigger.connect("body_entered", self, "_end_trigger_entered")
 # warning-ignore:return_value_discarded
 	$DeathArea.connect("body_entered", self, "_death_area_entered")
+
+
+func _process(_delta):
+	if (
+		Input.is_action_just_pressed("debug_next_section")
+		and OS.is_debug_build()
+		and not is_tweening
+	):
+		_end_section()
 
 
 func _end_trigger_entered(body):
@@ -36,6 +47,14 @@ func _tween_to_next():
 	)
 
 	$Tween.start()
+
+	$EndTrigger.monitoring = false
+	is_tweening = true
+
+	yield($Tween, "tween_all_completed")
+
+	is_tweening = false
+	$EndTrigger.monitoring = false
 
 
 func _end_level():
