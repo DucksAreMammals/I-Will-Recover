@@ -9,8 +9,10 @@ uniform vec3 color = vec3(0, 0, 0);
 uniform float breathe_speed = 0.0;
 uniform float breathe_amount = .5;
 uniform float zoom = 1;
+uniform float minimum = 0;
+uniform float maximum = 1;
 
 void fragment(){
-	COLOR = vec4(color, (sqrt(pow(abs(UV.x - 0.5), 2) + pow(abs(UV.y - 0.5), 2)) - start) * multiplier * (sin(TIME * breathe_speed) * breathe_amount + zoom));
+	COLOR = vec4(color, clamp((sqrt(pow(abs(UV.x - 0.5), 2) + pow(abs(UV.y - 0.5), 2)) - start) * multiplier * (sin(TIME * breathe_speed) * breathe_amount + zoom), minimum, maximum));
 }
 "
