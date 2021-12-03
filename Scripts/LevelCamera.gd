@@ -35,7 +35,7 @@ func _end_section():
 		_end_level()
 
 
-func _tween_to_next():
+func _tween_to_next(): 
 	$Tween.interpolate_property(
 		self,
 		"position",
