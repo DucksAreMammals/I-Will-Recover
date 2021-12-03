@@ -11,6 +11,7 @@ var section_offset := Vector2(400, 0)
 func _ready():
 	respawn_points = $RespawnPoints.get_children()
 
+#warning-ignore:return_value_discarded
 	$LevelCamera.connect("win", self, "_next_level")
 
 
@@ -27,4 +28,5 @@ func next_section() -> bool:
 
 
 func _next_level():
+#warning-ignore:return_value_discarded
 	get_tree().change_scene(next_level)
