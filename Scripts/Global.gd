@@ -2,9 +2,8 @@ extends Node
 
 var story
 
+
 func _ready():
-	OS.window_fullscreen = true
-	
 	var file = File.new()
 
 	if file.file_exists("res://story.json"):
@@ -14,6 +13,7 @@ func _ready():
 		story = parse_json(text)
 	else:
 		print("story.json not found")
+
 
 func _process(_delta):
 	if Input.is_action_just_pressed("fullscreen"):
