@@ -16,6 +16,8 @@ var was_on_floor := true
 
 var flipped_last_frame := false
 
+var story_shown := false
+
 onready var player_sensors := [
 	$PlayerSensor1,
 	$PlayerSensor2,
@@ -113,6 +115,7 @@ func _force_jump():
 
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and not story_shown:
 		emit_signal("caught")
 		$Listen.show_story()
+		story_shown = true
