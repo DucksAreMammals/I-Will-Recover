@@ -48,13 +48,13 @@ func _tween_to_next():
 
 	$Tween.start()
 
-	$EndTrigger.monitoring = false
+	$EndTrigger.set_deferred("monitoring", false)
 	is_tweening = true
 
 	yield($Tween, "tween_all_completed")
 
 	is_tweening = false
-	$EndTrigger.monitoring = true
+	$EndTrigger.set_deferred("monitoring", true)
 
 
 func _end_level():
