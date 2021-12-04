@@ -12,6 +12,8 @@ config_version=4
 
 config/name="Devcember"
 run/main_scene="res://Scenes/Screens/Menu.tscn"
+boot_splash/image="res://Splash.png"
+boot_splash/bg_color=Color( 1, 0.984314, 0.854902, 1 )
 config/icon="res://icon.png"
 
 [autoload]
