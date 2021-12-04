@@ -29,6 +29,7 @@ window/stretch/aspect="keep"
 
 [gui]
 
+theme/custom="res://default_theme.tres"
 theme/custom_font="res://Fonts/LiberationSans.tres"
 
 [input]
@@ -92,4 +93,5 @@ quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.447059, 0.454902, 0.396078, 1 )
 environment/default_environment="res://default_env.tres"
