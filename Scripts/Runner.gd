@@ -18,6 +18,17 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 
+func _process(delta):
+	$AnimatedSprite.flip_h = direction.x < 0
+
+	if velocity.y < 0:
+		$AnimatedSprite.play("jump")
+	elif velocity.y > 0:
+		$AnimatedSprite.play("fall")
+	else:
+		$AnimatedSprite.play("walk")
+
+
 func left():
 	direction = Vector2(-1, 0)
 
