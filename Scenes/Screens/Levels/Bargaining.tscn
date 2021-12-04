@@ -59,15 +59,11 @@ position = Vector2( 1992, 192 )
 
 [node name="Runner" parent="." instance=ExtResource( 7 )]
 position = Vector2( 104, 184 )
-speed = null
-gravity = null
 
 [node name="RunnerCommands" type="Node" parent="."]
 
 [node name="Area2D" type="Area2D" parent="RunnerCommands"]
 position = Vector2( 104, 184 )
-monitoring = false
-monitorable = false
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RunnerCommands/Area2D"]
@@ -75,20 +71,8 @@ shape = SubResource( 1 )
 
 [node name="Area2D2" type="Area2D" parent="RunnerCommands"]
 position = Vector2( 296, 184 )
-monitoring = false
-monitorable = false
 script = ExtResource( 8 )
 command = "left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RunnerCommands/Area2D2"]
-shape = SubResource( 1 )
-
-[node name="Area2D3" type="Area2D" parent="RunnerCommands"]
-position = Vector2( 296, 184 )
-monitoring = false
-monitorable = false
-script = ExtResource( 8 )
-command = "jump"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RunnerCommands/Area2D3"]
 shape = SubResource( 1 )

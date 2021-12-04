@@ -11,7 +11,15 @@ var was_on_floor := true
 
 var flipped_last_frame := false
 
-onready var player_sensors := [$PlayerSensor1, $PlayerSensor2, $PlayerSensor3, $PlayerSensor4]
+onready var player_sensors := [
+	$PlayerSensor1,
+	$PlayerSensor2,
+	$PlayerSensor3,
+	$PlayerSensor4,
+	$PlayerSensor5,
+	$PlayerSensor6,
+	$PlayerSensor7
+]
 
 
 func _physics_process(_delta):
@@ -50,8 +58,7 @@ func _physics_process(_delta):
 
 		direction = new_direction
 
-		for cast in player_sensors:
-			cast.scale.x = direction.x
+		_update_sensor_positions()
 	else:
 		flipped_last_frame = false
 
@@ -69,10 +76,17 @@ func _process(_delta):
 
 func left():
 	direction = Vector2(-1, 0)
+	_update_sensor_positions()
 
 
 func right():
 	direction = Vector2(1, 0)
+	_update_sensor_positions()
+
+
+func _update_sensor_positions():
+	for cast in player_sensors:
+		cast.scale.x = direction.x
 
 
 func jump():
