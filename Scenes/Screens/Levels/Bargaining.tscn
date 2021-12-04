@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Tilemaps/TilesetNormal.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/GameObjects/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://Scripts/RunnerArea.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 49 )
 
 [node name="Bargaining" type="Node2D"]
 script = ExtResource( 4 )
@@ -64,7 +67,7 @@ speed = 75.0
 jump_speed = 300.0
 
 [node name="Runner2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 592, 208 )
+position = Vector2( 496, 120 )
 story_key = "bargaining_2"
 section = 1
 
@@ -124,3 +127,34 @@ command = "jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RunnerCommands/Area2D7"]
 shape = SubResource( 1 )
+
+[node name="RunnerConstraints" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RunnerConstraints"]
+position = Vector2( 0, 168 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RunnerConstraints"]
+position = Vector2( 400, 168 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RunnerConstraints"]
+position = Vector2( 800, 168 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RunnerConstraints"]
+position = Vector2( 1200, 168 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="RunnerConstraints"]
+position = Vector2( 1600, 168 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="RunnerConstraints"]
+position = Vector2( 2000, 168 )
+shape = SubResource( 2 )
+
+[connection signal="caught" from="Runner" to="Gate" method="open_gate"]
+[connection signal="caught" from="Runner2" to="Gate2" method="open_gate"]

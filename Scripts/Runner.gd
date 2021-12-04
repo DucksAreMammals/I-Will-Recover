@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal caught
+
 export(String) var story_key
 export var section := 0
 
@@ -23,6 +25,12 @@ onready var player_sensors := [
 	$PlayerSensor6,
 	$PlayerSensor7
 ]
+
+
+func _ready():
+#warning-ignore:return_value_discarded
+	$Area2D.connect("body_entered", self, "_on_body_entered")
+	$Listen.story_key = story_key
 
 
 func _physics_process(_delta):
@@ -102,3 +110,9 @@ func jump():
 
 func _force_jump():
 	velocity.y = -jump_speed
+
+
+func _on_body_entered(body):
+	if body.is_in_group("player"):
+		emit_signal("caught")
+		$Listen.show_story()

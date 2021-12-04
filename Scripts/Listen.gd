@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 var story_key
-var story_bit
 
 var letter_interval = 0.05
 var line_interval = 1.0
@@ -21,7 +20,7 @@ func show_story():
 
 	$Control.visible = true
 
-	story_bit = Global.story[story_key]
+	var story_bit = Global.story[story_key]
 
 	var text = ""
 
