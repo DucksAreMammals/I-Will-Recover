@@ -41,9 +41,6 @@ func _physics_process(_delta):
 func _apply_friction():
 	velocity.x *= friction
 
-	if get_floor_normal().x != 0 and get_floor_normal().y != 0:
-		velocity.x = 0
-
 
 func _get_acceleration():
 	acceleration = Vector2.ZERO

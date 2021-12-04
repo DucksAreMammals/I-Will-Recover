@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Tilemaps/TilesetNormal.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/GameObjects/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/GameObjects/Gate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/Gate.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/GameObjects/Runner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/RunnerArea.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
 
 [node name="Bargaining" type="Node2D"]
 script = ExtResource( 4 )
@@ -57,3 +61,31 @@ script = ExtResource( 6 )
 [node name="Gate5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1992, 192 )
 script = ExtResource( 6 )
+
+[node name="Runner" parent="." instance=ExtResource( 7 )]
+position = Vector2( 104, 184 )
+
+[node name="RunnerCommands" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="RunnerCommands"]
+position = Vector2( 104, 184 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RunnerCommands/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="RunnerCommands"]
+position = Vector2( 296, 184 )
+script = ExtResource( 8 )
+command = "left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RunnerCommands/Area2D2"]
+shape = SubResource( 1 )
+
+[node name="Area2D3" type="Area2D" parent="RunnerCommands"]
+position = Vector2( 296, 184 )
+script = ExtResource( 8 )
+command = "jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RunnerCommands/Area2D3"]
+shape = SubResource( 1 )
