@@ -15,8 +15,11 @@ func _ready():
 	$LevelCamera.connect("win", self, "_next_level")
 
 
-func get_respawn_point():
-	return respawn_points[section].position
+func get_respawn_point(ask = -1):
+	if ask == -1:
+		ask = section
+
+	return respawn_points[ask].position
 
 
 func next_section() -> bool:

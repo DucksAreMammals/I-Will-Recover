@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+export(String) var story_key
+export var section := 0
+
 export var speed := 100.0
 export var jump_speed := 350.0
 export var gravity := 20.0
@@ -61,6 +64,9 @@ func _physics_process(_delta):
 		_update_sensor_positions()
 	else:
 		flipped_last_frame = false
+
+	if position.y > 650:
+		position = get_parent().get_respawn_point(section)
 
 
 func _process(_delta):

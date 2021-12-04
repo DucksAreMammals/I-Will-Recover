@@ -4,15 +4,47 @@
 			"speaker": "internal",
 			"line": "Everything is fine. Nothing is wrong. I refuse to acknowledge it. It is not a problem. I am fine. Everyone is here. Everyone is okay."
 		},
-
 		{
 			"speaker": "dad",
 			"line": "Are you going to be okay?"
 		},
-
 		{
 			"speaker": "self",
 			"line": "Yes. I don't have any problems. I am perfectly fine."
+		}
+	],
+	"anger_opening": [
+		{
+			"speaker": "internal",
+			"line": "YOU CAN'T TAKE HER AWAY FROM ME I WILL KILL YOU I WILL I SWEAR I HATE YOU I WILL KILL YOU YOU ARE"
+		},
+		{
+			"speaker": "self",
+			"line": "AAAAAAAAAAAAAAAAAAAA AAAAAAAARRRAAAAAAARAARARRAAAAAAAAAAAAHHHHHHARARRARRRARHAHH"
+		}
+	],
+	"bargaining_1": [
+		{
+			"speaker": "internal",
+			"line": "We could have taken her to the hospital sooner. She could have lived had we gone to the doctor. We should have seen the signs."
+		}
+	],
+	"bargaining_2": [
+		{
+			"speaker": "internal",
+			"line": "I'll do anything. Bring her back and I'll give you anything you want."
+		}
+	],
+	"bargaining_3": [
+		{
+			"speaker": "internal",
+			"line": "God, bring her back, and I'll never do anything wrong again. Give me her back and I'll never go to church. I'll never do anything wrong. Give me her back."
+		}
+	],
+	"bargaining_4": [
+		{
+			"speaker": "internal",
+			"line": "Please, I'm begging you, give her back to me."
 		}
 	]
 }
