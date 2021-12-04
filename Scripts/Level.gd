@@ -9,6 +9,7 @@ var section_offset := Vector2(400, 0)
 
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	respawn_points = $RespawnPoints.get_children()
 
 #warning-ignore:return_value_discarded
