@@ -15,11 +15,7 @@ func _ready():
 
 
 func _process(_delta):
-	if (
-		Input.is_action_just_pressed("debug_next_section")
-		and OS.is_debug_build()
-		and not is_tweening
-	):
+	if Input.is_action_pressed("debug_next_section") and OS.is_debug_build() and not is_tweening:
 		_end_section()
 
 
@@ -35,7 +31,7 @@ func _end_section():
 		_end_level()
 
 
-func _tween_to_next(): 
+func _tween_to_next():
 	$Tween.interpolate_property(
 		self,
 		"position",
