@@ -80,14 +80,14 @@ jump_speed = 350.0
 
 [node name="Runner4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1336, 40 )
-story_key = "bargaining_3"
+story_key = "bargaining_4"
 section = 3
 speed = 110.0
 jump_speed = 350.0
 
 [node name="Runner5" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1648, 184 )
-story_key = "bargaining_3"
+story_key = "bargaining_5"
 section = 4
 speed = 200.0
 jump_speed = 450.0

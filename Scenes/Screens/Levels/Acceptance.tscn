@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/GameObjects/LevelCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/GameObjects/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/GameObjects/Runner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/GameObjects/Gate.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/GameObjects/RunnerArea.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/GameObjects/Listener.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 49 )
@@ -81,6 +82,7 @@ position = Vector2( 1592, 208 )
 
 [node name="Runner" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1456, 128 )
+story_key = "acceptance_bargaining"
 section = 3
 
 [node name="RunnerCommands" type="Node" parent="."]
@@ -105,5 +107,11 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="RunnerCommands/Jump"]
 position = Vector2( 512, -64 )
 shape = SubResource( 2 )
+
+[node name="Listener" parent="." instance=ExtResource( 11 )]
+position = Vector2( 344, 200 )
+story_key = "acceptance_opening"
+
+[connection signal="caught" from="Runner" to="Gate" method="open_gate"]
 
 [editable path="Player"]

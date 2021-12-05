@@ -46,5 +46,27 @@
 			"speaker": "internal",
 			"line": "Please, I'm begging you, give her back to me."
 		}
+	],
+	"bargaining_5": [
+		{
+			"speaker": "internal",
+			"line": "Tell me what you want! Please, I'll give it to you. Please give her back."
+		}
+	],
+	"acceptance_opening": [
+		{
+			"speaker": "dad",
+			"line": "You seem to be feeling better now."
+		},
+		{
+			"speaker": "self",
+			"line": "I am"
+		}
+	],
+	"acceptance_bargaining": [
+		{
+			"speaker": "internal",
+			"line": "Please?"
+		}
 	]
 }

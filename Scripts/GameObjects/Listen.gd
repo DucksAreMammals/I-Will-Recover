@@ -15,6 +15,8 @@ func _ready():
 
 
 func show_story():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 	find_node("ExitButton").grab_focus()
 	get_tree().paused = true
 
@@ -45,5 +47,6 @@ func show_story():
 
 
 func _exit():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$Control.visible = false
 	get_tree().paused = false

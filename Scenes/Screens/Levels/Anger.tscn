@@ -43,7 +43,7 @@ position = Vector2( 1648, 184 )
 
 [node name="Listener" parent="." instance=ExtResource( 5 )]
 position = Vector2( 328, 184 )
-story_key = "denial_opening"
+story_key = "anger_opening"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 48, 184 )
