@@ -36,6 +36,7 @@ position = Vector2( 64, 200 )
 
 [node name="Vignette" parent="Player" index="6"]
 material = ExtResource( 5 )
+position = Vector2( 96, 208 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 1 )]
 
