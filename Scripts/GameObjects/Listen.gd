@@ -10,11 +10,14 @@ onready var label = find_node("RichTextLabel")
 
 func _ready():
 	$Control.visible = false
+	$Control.modulate = Color(1, 1, 1, 0)
 # warning-ignore:return_value_discarded
 	find_node("ExitButton").connect("pressed", self, "_exit")
 
 
 func show_story():
+	$Control.visible = true
+	$Control/AnimationPlayer.play("Fade In")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	find_node("ExitButton").grab_focus()
@@ -47,6 +50,8 @@ func show_story():
 
 
 func _exit():
+	$Control/AnimationPlayer.play_backwards("Fade In")
+	yield($Control/AnimationPlayer, "animation_finished")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$Control.visible = false
 	get_tree().paused = false
