@@ -9,8 +9,8 @@ float rand(vec2 co){
 
 void vertex() {
 	if (RESTART) {
-		TRANSFORM[3].x = rand(vec2(TIME, float(NUMBER))) * 100.0 - 50.0;
-		TRANSFORM[3].y = rand(vec2(TIME * 2.0, float(NUMBER))) * 100.0 - 50.0;
+		TRANSFORM[3].x = rand(vec2(TIME * 4.3, float(NUMBER))) * 100.0 - 50.0;
+		TRANSFORM[3].y = rand(vec2(TIME * 7.0, float(NUMBER))) * 100.0 - 50.0;
 		
 		VELOCITY.x = -TRANSFORM[3].x;
 		VELOCITY.y = -TRANSFORM[3].y;

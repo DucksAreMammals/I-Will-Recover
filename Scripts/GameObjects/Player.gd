@@ -17,6 +17,8 @@ var grounded_y := 0.0
 var facing_right := true
 var stuck_raycasts
 
+var can_move := true
+
 onready var level = get_parent()
 
 
@@ -25,10 +27,11 @@ func _ready():
 
 
 func _process(_delta):
-	$AnimatedSprite.material.set_shader_param("x_speed", velocity.x)
-	$AnimatedSprite.material.set_shader_param("y_speed", velocity.y)
-	$AnimatedSprite.material.set_shader_param("x_direction", 1 if velocity.x > 0 else -1)
-	$AnimatedSprite.material.set_shader_param("y_direction", 1 if velocity.y > 0 else -1)
+	if $AnimatedSprite.material:
+		$AnimatedSprite.material.set_shader_param("x_speed", velocity.x)
+		$AnimatedSprite.material.set_shader_param("y_speed", velocity.y)
+		$AnimatedSprite.material.set_shader_param("x_direction", 1 if velocity.x > 0 else -1)
+		$AnimatedSprite.material.set_shader_param("y_direction", 1 if velocity.y > 0 else -1)
 
 
 func _physics_process(_delta):
@@ -52,13 +55,14 @@ func _apply_friction():
 func _get_acceleration():
 	acceleration = Vector2.ZERO
 
-	if Input.is_action_pressed("left"):
-		acceleration.x += -acceleration_speed * acceleration_speed
-		facing_right = false
+	if can_move:
+		if Input.is_action_pressed("left"):
+			acceleration.x += -acceleration_speed * acceleration_speed
+			facing_right = false
 
-	if Input.is_action_pressed("right"):
-		acceleration.x += acceleration_speed * acceleration_speed
-		facing_right = true
+		if Input.is_action_pressed("right"):
+			acceleration.x += acceleration_speed * acceleration_speed
+			facing_right = true
 
 
 func _set_grounded_time():
@@ -68,13 +72,14 @@ func _set_grounded_time():
 
 
 func _jump():
-	if Input.is_action_just_pressed("up") and grounded_time + coyote_time > OS.get_ticks_msec():
-		position.y = grounded_y
-		velocity.y = 0
-		acceleration.y = -jump_speed
-		jumping = true
-	else:
-		jumping = false
+	if can_move:
+		if Input.is_action_just_pressed("up") and grounded_time + coyote_time > OS.get_ticks_msec():
+			position.y = grounded_y
+			velocity.y = 0
+			acceleration.y = -jump_speed
+			jumping = true
+		else:
+			jumping = false
 
 
 func _set_snapping():
@@ -115,6 +120,10 @@ func _apply_animation():
 
 func die():
 	position = level.get_respawn_point()
+	can_move = false
+	$DeathParticleAnimation.play("Absorb")
+	yield($DeathParticleAnimation, "animation_finished")
+	can_move = true
 
 
 func _unstick():
