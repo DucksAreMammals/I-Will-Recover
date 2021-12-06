@@ -1,5 +1,6 @@
 extends Button
 
+export(int) var level_number
 export(String, FILE) var scene
 export(bool) var focus
 
@@ -7,6 +8,9 @@ export(bool) var focus
 func _ready():
 	if focus:
 		grab_focus()
+
+	if level_number > Global.level:
+		disabled = true
 
 
 func _pressed():

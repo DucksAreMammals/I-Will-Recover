@@ -1,5 +1,6 @@
 extends Node2D
 
+export var level_number := 0
 export var section_max := 4
 export(String, FILE) var next_level
 
@@ -14,6 +15,10 @@ func _ready():
 
 #warning-ignore:return_value_discarded
 	$LevelCamera.connect("win", self, "_next_level")
+
+	Global.level = level_number
+
+	Global.save_file()
 
 
 func get_respawn_point(ask = -1):

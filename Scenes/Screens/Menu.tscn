@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/Buttons/SceneChange.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Buttons/LevelSelect.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Buttons/FullscreenButton.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=3]
 
@@ -39,9 +39,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+level_number = 2
 scene = "res://Scenes/Screens/Levels/Bargaining.tscn"
 
-[node name="BargainingLevel2" type="Button" parent="."]
+[node name="AcceptanceLevel" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 232.0
@@ -53,6 +54,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+level_number = 4
 scene = "res://Scenes/Screens/Levels/Acceptance.tscn"
 
 [node name="DepressionLevel" type="Button" parent="."]
@@ -67,6 +69,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+level_number = 3
 scene = "res://Scenes/Screens/Levels/Depression.tscn"
 
 [node name="AngerLevel" type="Button" parent="."]
@@ -81,6 +84,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+level_number = 1
 scene = "res://Scenes/Screens/Levels/Anger.tscn"
 
 [node name="Fullscreen" type="Button" parent="."]
