@@ -5,6 +5,9 @@ var story_key
 var letter_interval = 0.05
 var line_interval = 1.0
 
+var running = false
+var start_time = -1
+
 onready var label = find_node("RichTextLabel")
 
 
@@ -15,6 +18,45 @@ func _ready():
 	find_node("ExitButton").connect("pressed", self, "_exit")
 
 
+func _process(_delta):
+	var story_bit = Global.story[story_key]
+
+	var text = ""
+
+	var wait_time = 0.0
+	var current_time = OS.get_ticks_msec() / 1000.0
+
+	for line in story_bit:
+		var current_line = ""
+
+		for character in line["line"]:
+			if current_time < start_time + wait_time:
+				break
+
+			current_line += character
+			wait_time += letter_interval
+
+		wait_time += line_interval
+
+		match line["speaker"]:
+			"internal":
+				text += "[color=#aaaaaa]"
+				text += current_line
+				text += "[/color]"
+			"self":
+				text += "[color=#ff99ff]"
+				text += current_line
+				text += "[/color]"
+			"dad":
+				text += "[color=#77ff77]"
+				text += current_line
+				text += "[/color]"
+
+		text += "\n\n"
+
+	label.bbcode_text = text
+
+
 func show_story():
 	$Control.visible = true
 	$Control/AnimationPlayer.play("Fade In")
@@ -23,30 +65,8 @@ func show_story():
 	find_node("ExitButton").grab_focus()
 	get_tree().paused = true
 
-	$Control.visible = true
-
-	var story_bit = Global.story[story_key]
-
-	var text = ""
-
-	for line in story_bit:
-		match line["speaker"]:
-			"internal":
-				text += "[color=#aaaaaa]"
-				text += line["line"]
-				text += "[/color]"
-			"self":
-				text += "[color=#ff99ff]"
-				text += line["line"]
-				text += "[/color]"
-			"dad":
-				text += "[color=#77ff77]"
-				text += line["line"]
-				text += "[/color]"
-
-		text += "\n\n"
-
-	label.bbcode_text = text
+	start_time = OS.get_ticks_msec() / 1000.0
+	running = true
 
 
 func _exit():
