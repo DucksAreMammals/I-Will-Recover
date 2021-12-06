@@ -24,6 +24,13 @@ func _ready():
 	stuck_raycasts = [$StuckRay1, $StuckRay2, $StuckRay3, $StuckRay4]
 
 
+func _process(_delta):
+	$AnimatedSprite.material.set_shader_param("x_speed", velocity.x)
+	$AnimatedSprite.material.set_shader_param("y_speed", velocity.y)
+	$AnimatedSprite.material.set_shader_param("x_direction", 1 if velocity.x > 0 else -1)
+	$AnimatedSprite.material.set_shader_param("y_direction", 1 if velocity.y > 0 else -1)
+
+
 func _physics_process(_delta):
 	_apply_friction()
 	_get_acceleration()
@@ -116,7 +123,3 @@ func _unstick():
 			return
 
 	die()
-
-
-func set_vignette(material):
-	$Vignette.material = material

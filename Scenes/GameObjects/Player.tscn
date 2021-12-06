@@ -1,14 +1,27 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/Player/Player.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/GameObjects/Player.gd" type="Script" id=2]
 [ext_resource path="res://Shaders/RegularVignette.tres" type="Material" id=3]
+[ext_resource path="res://Shaders/PlayerMovement.tres" type="Shader" id=4]
+[ext_resource path="res://Sprites/Particle.png" type="Texture" id=5]
+[ext_resource path="res://Shaders/CenterParticles.tres" type="Shader" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 7.9 )
 
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 4 )
+shader_param/x_speed = 0.0
+shader_param/y_speed = 0.0
+shader_param/x_direction = 1.0
+shader_param/y_direction = 1.0
+
 [sub_resource type="ImageTexture" id=3]
 size = Vector2( 800, 800 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 6 )
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 collision_layer = 2
@@ -21,6 +34,7 @@ position = Vector2( 0, 0.1 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 4 )
 frames = ExtResource( 1 )
 animation = "idle"
 
@@ -46,5 +60,14 @@ collision_mask = 9
 
 [node name="Vignette" type="Sprite" parent="."]
 material = ExtResource( 3 )
+position = Vector2( -1, -1 )
 z_index = 10
 texture = SubResource( 3 )
+
+[node name="DeathParticleAnimation" type="AnimationPlayer" parent="."]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+amount = 20
+speed_scale = 2.0
+process_material = SubResource( 6 )
+texture = ExtResource( 5 )
