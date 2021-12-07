@@ -16,7 +16,7 @@ extents = Vector2( 16, 49 )
 [node name="Bargaining" type="Node2D"]
 script = ExtResource( 4 )
 level_number = 2
-next_level = "res://Scenes/Screens/Menu.tscn"
+next_level = "res://Scenes/Screens/Levels/Depression.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
