@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tilesets/TilesetNormal.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/GameObjects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/GameObjects/LevelCamera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/GameObjects/Level.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/GameObjects/Listener.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/GameObjects/FadeScreen.tscn" type="PackedScene" id=6]
 
 [node name="Denial" type="Node2D"]
 script = ExtResource( 4 )
+level_name = "1. Denial"
 next_level = "res://Scenes/Screens/Levels/Anger.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -41,3 +43,5 @@ story_key = "denial_opening"
 position = Vector2( 48, 184 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 3 )]
+
+[node name="Fade" parent="." instance=ExtResource( 6 )]

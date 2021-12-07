@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tilesets/TilesetAngry.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/GameObjects/Player.tscn" type="PackedScene" id=2]
@@ -7,10 +7,12 @@
 [ext_resource path="res://Scenes/GameObjects/Listener.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Shaders/Vingette/AngerVignette.tres" type="Material" id=6]
 [ext_resource path="res://Tilesets/TilesetHurt.tres" type="TileSet" id=7]
+[ext_resource path="res://Scenes/GameObjects/FadeScreen.tscn" type="PackedScene" id=8]
 
 [node name="Anger" type="Node2D"]
 script = ExtResource( 4 )
 level_number = 1
+level_name = "2. Anger"
 next_level = "res://Scenes/Screens/Levels/Bargaining.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -53,5 +55,7 @@ position = Vector2( 48, 184 )
 material = ExtResource( 6 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 3 )]
+
+[node name="Fade" parent="." instance=ExtResource( 8 )]
 
 [editable path="Player"]

@@ -14,5 +14,7 @@ func _ready():
 
 
 func _pressed():
+	$"../Fade".fade_in()
+	yield($"../Fade", "AnimationFinished")
 # warning-ignore:return_value_discarded
 	get_tree().change_scene(scene)
