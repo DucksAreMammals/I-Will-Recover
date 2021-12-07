@@ -118,17 +118,30 @@ func _apply_animation():
 		$AnimatedSprite.play("walk")
 
 
-func die():
-	position = level.get_respawn_point()
-	can_move = false
-	$DeathParticleAnimation.play("Absorb")
-	yield($DeathParticleAnimation, "animation_finished")
-	can_move = true
-
-
 func _unstick():
 	for stuck_raycast in stuck_raycasts:
 		if not stuck_raycast.is_colliding():
 			return
 
 	die()
+
+
+func die():
+	can_move = false
+	$DeathParticleAnimation.play("Absorb")
+	yield($DeathParticleAnimation, "animation_finished")
+	can_move = true
+
+
+func tween_to_position(duration):
+	$Tween.interpolate_property(
+		self,
+		"position",
+		position,
+		level.get_respawn_point(),
+		duration,
+		Tween.TRANS_CUBIC,
+		Tween.EASE_IN_OUT
+	)
+
+	$Tween.start()
