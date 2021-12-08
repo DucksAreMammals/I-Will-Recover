@@ -78,6 +78,7 @@ func _jump():
 			velocity.y = 0
 			acceleration.y = -jump_speed
 			jumping = true
+			AudioController.play_jump()
 		else:
 			jumping = false
 

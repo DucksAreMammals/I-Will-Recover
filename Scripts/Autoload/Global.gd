@@ -4,7 +4,7 @@ var story
 
 var level = 0
 
-var music_level = 80
+var music_level = 100
 
 
 func _ready():
