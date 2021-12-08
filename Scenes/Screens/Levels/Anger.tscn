@@ -50,7 +50,7 @@ story_key = "anger_opening"
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 48, 184 )
 
-[node name="Vignette" parent="Player" index="6"]
+[node name="Sprite" parent="Player/Vignette" index="0"]
 material = ExtResource( 6 )
 
 [node name="LevelCamera" parent="." instance=ExtResource( 3 )]

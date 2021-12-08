@@ -5,10 +5,12 @@
 [resource]
 shader = ExtResource( 1 )
 shader_param/start = 0.0
-shader_param/multiplier = 0.33
+shader_param/multiplier = 0.165
 shader_param/color = Vector3( 0.2, 0.2, 0.2 )
 shader_param/breathe_speed = 0.0
 shader_param/breathe_amount = 0.5
 shader_param/zoom = 1.0
 shader_param/minimum = 0.792
 shader_param/maximum = 1.0
+shader_param/player_x = 0.5
+shader_param/player_y = 0.5

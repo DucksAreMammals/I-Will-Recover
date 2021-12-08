@@ -11,6 +11,7 @@
 script = ExtResource( 5 )
 level_number = 3
 level_name = "4. Depression"
+section_max = null
 next_level = "res://Scenes/Screens/Levels/Acceptance.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -29,7 +30,7 @@ jump_speed = 225.0
 [node name="AnimatedSprite" parent="Player" index="1"]
 frames = ExtResource( 6 )
 
-[node name="Vignette" parent="Player" index="6"]
+[node name="Sprite" parent="Player/Vignette" index="0"]
 material = ExtResource( 4 )
 
 [node name="RespawnPoints" type="Node" parent="."]

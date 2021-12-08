@@ -8,9 +8,6 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 7.9 )
 
-[sub_resource type="ImageTexture" id=3]
-size = Vector2( 800, 800 )
-
 [sub_resource type="Animation" id=7]
 resource_name = "Absorb"
 length = 3.0
@@ -201,7 +198,11 @@ orbit_velocity_random = 0.0
 scale = 0.28
 scale_curve = SubResource( 23 )
 
+[sub_resource type="ImageTexture" id=25]
+size = Vector2( 400, 400 )
+
 [node name="Player" type="KinematicBody2D" groups=["player"]]
+pause_mode = 2
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 2 )
@@ -212,6 +213,7 @@ position = Vector2( 0, 0.1 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+pause_mode = 1
 frames = ExtResource( 1 )
 animation = "idle"
 
@@ -234,11 +236,6 @@ collision_mask = 9
 enabled = true
 cast_to = Vector2( -4, 0 )
 collision_mask = 9
-
-[node name="Vignette" type="Sprite" parent="."]
-material = ExtResource( 3 )
-z_index = 10
-texture = SubResource( 3 )
 
 [node name="DeathParticleAnimation" type="AnimationPlayer" parent="."]
 anims/Absorb = SubResource( 7 )
@@ -283,3 +280,11 @@ process_material = SubResource( 24 )
 texture = ExtResource( 5 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Vignette" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Vignette"]
+material = ExtResource( 3 )
+position = Vector2( 200, 112 )
+z_index = 10
+texture = SubResource( 25 )

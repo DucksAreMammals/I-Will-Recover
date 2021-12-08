@@ -12,7 +12,10 @@ uniform float zoom = 1;
 uniform float minimum = 0;
 uniform float maximum = 1;
 
+uniform float player_x = 0.5;
+uniform float player_y = 0.5;
+
 void fragment(){
-	COLOR = vec4(color, clamp((sqrt(pow(abs(UV.x - 0.5), 2) + pow(abs(UV.y - 0.5), 2)) - start) * multiplier * (sin(TIME * breathe_speed) * breathe_amount + zoom) + minimum, minimum, maximum));
+	COLOR = vec4(color, clamp((sqrt(pow(UV.x - player_x, 2) + pow(UV.y - player_y, 2)) - start) * multiplier * (sin(TIME * breathe_speed) * breathe_amount + zoom) + minimum, minimum, maximum));
 }
 "

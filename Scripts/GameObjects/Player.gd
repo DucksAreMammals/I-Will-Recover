@@ -27,25 +27,23 @@ func _ready():
 
 
 func _process(_delta):
-	if $AnimatedSprite.material:
-		$AnimatedSprite.material.set_shader_param("x_speed", velocity.x)
-		$AnimatedSprite.material.set_shader_param("y_speed", velocity.y)
-		$AnimatedSprite.material.set_shader_param("x_direction", 1 if velocity.x > 0 else -1)
-		$AnimatedSprite.material.set_shader_param("y_direction", 1 if velocity.y > 0 else -1)
-
+	var relative_position = get_canvas_transform().origin + global_position
+	$Vignette/Sprite.material.set_shader_param("player_x", relative_position.x / 400)
+	$Vignette/Sprite.material.set_shader_param("player_y", (relative_position.y + 87.5) / 400)
 
 func _physics_process(_delta):
-	_apply_friction()
-	_get_acceleration()
-	_set_grounded_time()
-	_jump()
-	_set_snapping()
-	_apply_gravity()
-	_update_velocity()
-	_apply_velocity()
-	_collide()
-	_apply_animation()
-	_unstick()
+	if not get_tree().paused:
+		_apply_friction()
+		_get_acceleration()
+		_set_grounded_time()
+		_jump()
+		_set_snapping()
+		_apply_gravity()
+		_update_velocity()
+		_apply_velocity()
+		_collide()
+		_apply_animation()
+		_unstick()
 
 
 func _apply_friction():
