@@ -4,6 +4,8 @@ var story
 
 var level = 0
 
+var music_level = 80
+
 
 func _ready():
 	var file = File.new()

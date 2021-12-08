@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MelancholyTrumpet.ogg-1de5f5714b6a9d6d98ba48bdcaa2a2bf.oggstr"
+
+[deps]
+
+source_file="res://Music/Music/MelancholyTrumpet.ogg"
+dest_files=[ "res://.import/MelancholyTrumpet.ogg-1de5f5714b6a9d6d98ba48bdcaa2a2bf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
