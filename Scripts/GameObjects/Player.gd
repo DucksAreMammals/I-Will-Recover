@@ -28,8 +28,8 @@ func _ready():
 
 func _process(_delta):
 	var relative_position = get_canvas_transform().origin + global_position
-	$Vignette/Sprite.material.set_shader_param("player_x", relative_position.x / 400)
-	$Vignette/Sprite.material.set_shader_param("player_y", (relative_position.y + 87.5) / 400)
+	$"../LevelCamera/Vignette".material.set_shader_param("player_x", relative_position.x / 400)
+	$"../LevelCamera/Vignette".material.set_shader_param("player_y", (relative_position.y + 87.5) / 400)
 
 func _physics_process(_delta):
 	if not get_tree().paused:

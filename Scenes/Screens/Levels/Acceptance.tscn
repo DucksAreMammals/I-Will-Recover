@@ -44,10 +44,10 @@ tile_data = PoolIntArray( 30, 0, 196608, 34, 0, 196608, 39, 0, 196608, 44, 0, 19
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 64, 200 )
 
-[node name="Sprite" parent="Player/Vignette" index="0"]
-material = ExtResource( 5 )
-
 [node name="LevelCamera" parent="." instance=ExtResource( 1 )]
+
+[node name="Vignette" parent="LevelCamera" index="4"]
+material = ExtResource( 5 )
 
 [node name="RespawnPoints" type="Node" parent="."]
 
@@ -115,4 +115,4 @@ story_key = "acceptance_opening"
 
 [connection signal="caught" from="Runner" to="Gate" method="open_gate"]
 
-[editable path="Player"]
+[editable path="LevelCamera"]
