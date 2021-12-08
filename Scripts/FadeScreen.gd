@@ -17,3 +17,9 @@ func fade_out():
 	$AnimationPlayer.play("Fade Out")
 	yield($AnimationPlayer, "animation_finished")
 	emit_signal("AnimationFinished")
+
+
+func fade_out_fast():
+	$AnimationPlayer.play("Fade Out Fast")
+	yield($AnimationPlayer, "animation_finished")
+	emit_signal("AnimationFinished")

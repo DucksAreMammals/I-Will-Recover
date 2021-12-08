@@ -58,6 +58,8 @@ func _process(_delta):
 
 
 func show_story():
+	PauseMenu.can_pause = false
+
 	$Control.visible = true
 	$Control/AnimationPlayer.play("Fade In")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -70,6 +72,8 @@ func show_story():
 
 
 func _exit():
+	PauseMenu.can_pause = true
+
 	$Control/AnimationPlayer.play_backwards("Fade In")
 	yield($Control/AnimationPlayer, "animation_finished")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

@@ -21,10 +21,12 @@ func _ready():
 		Global.save_file()
 
 	get_tree().paused = true
-	$Fade.set_text(level_name)
-	$Fade.fade_out()
-	yield($Fade, "AnimationFinished")
+	PauseMenu.can_pause = false
+	FadeScreen.set_text(level_name)
+	FadeScreen.fade_out()
+	yield(FadeScreen, "AnimationFinished")
 	get_tree().paused = false
+	PauseMenu.can_pause = true
 
 
 func get_respawn_point(ask = -1):
@@ -44,9 +46,10 @@ func next_section() -> bool:
 
 func _next_level():
 	get_tree().paused = true
-	$Fade.set_text("")
-	$Fade.fade_in()
-	yield($Fade, "AnimationFinished")
+	PauseMenu.can_pause = false
+	FadeScreen.set_text("")
+	FadeScreen.fade_in()
+	yield(FadeScreen, "AnimationFinished")
 
 #warning-ignore:return_value_discarded
 	get_tree().change_scene(next_level)

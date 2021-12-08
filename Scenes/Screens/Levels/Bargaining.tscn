@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Tilesets/TilesetNormal.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/GameObjects/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/GameObjects/LevelCamera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/GameObjects/Level.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/GameObjects/Gate.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/GameObjects/FadeScreen.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GameObjects/Runner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/GameObjects/RunnerArea.gd" type="Script" id=8]
 
@@ -239,8 +238,6 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="RunnerConstraints"]
 position = Vector2( 2000, 168 )
 shape = SubResource( 2 )
-
-[node name="Fade" parent="." instance=ExtResource( 6 )]
 
 [connection signal="caught" from="Runner" to="Gate" method="open_gate"]
 [connection signal="caught" from="Runner2" to="Gate2" method="open_gate"]
