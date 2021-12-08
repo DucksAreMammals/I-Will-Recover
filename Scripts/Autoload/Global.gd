@@ -4,7 +4,7 @@ var story
 
 var level = 0
 
-var music_level = 100
+var music_volume = 100
 
 
 func _ready():
@@ -35,6 +35,7 @@ func save_file():
 
 	file.open("user://save", File.WRITE)
 	file.store_var(level)
+	file.store_var(music_volume)
 	file.close()
 
 
@@ -44,6 +45,7 @@ func _load_file():
 	if file.file_exists("user://save"):
 		file.open("user://save", File.READ)
 		level = file.get_var()
+		music_volume = file.get_var()
 		file.close()
 	else:
 		save_file()

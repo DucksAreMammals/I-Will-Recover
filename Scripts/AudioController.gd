@@ -9,9 +9,17 @@ var play_sfx := true
 
 
 func _ready():
-	if Global.music_level != 0:
-		$MusicPlayer.volume_db = (100 - Global.music_level) * 0.01 * min_music_volume
-		$MusicPlayer.play()
+	update_volume()
+
+
+func update_volume():
+	if Global.music_volume != 0:
+		$MusicPlayer.volume_db = (100 - Global.music_volume) * 0.01 * min_music_volume
+
+		if not $MusicPlayer.playing:
+			$MusicPlayer.play()
+	else:
+		$MusicPlayer.stop()
 
 
 func play_jump():

@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready():
+	get_tree().paused = false
 	FadeScreen.fade_out_fast()
 	FadeScreen.set_text("")
 	PauseMenu.can_pause = false
