@@ -15,8 +15,10 @@ func _ready():
 	respawn_points = $RespawnPoints.get_children()
 #warning-ignore:return_value_discarded
 	$LevelCamera.connect("win", self, "_next_level")
-	Global.level = level_number
-	Global.save_file()
+
+	if Global.level < level_number:
+		Global.level = level_number
+		Global.save_file()
 
 	get_tree().paused = true
 	$Fade.set_text(level_name)
