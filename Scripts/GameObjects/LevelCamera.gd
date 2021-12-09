@@ -15,11 +15,7 @@ func _ready():
 
 
 func _process(_delta):
-	if (
-		Input.is_action_just_pressed("debug_next_section")
-		and (OS.is_debug_build() or OS.has_feature("Debug"))
-		and not is_tweening
-	):
+	if Input.is_action_just_pressed("debug_next_section") and Global.debug_mode and not is_tweening:
 		_end_section()
 
 
