@@ -2,8 +2,8 @@ extends CanvasLayer
 
 var story_key
 
-var letter_interval = 0.05
-var line_interval = 1.0
+var letter_interval = 0.025
+var line_interval = 0.5
 
 var running = false
 var start_time = -1
@@ -44,7 +44,7 @@ func _process(_delta):
 				text += current_line
 				text += "[/color]"
 			"self":
-				text += "[color=#ff99ff]"
+				text += "[color=#ffffff]"
 				text += current_line
 				text += "[/color]"
 			"dad":

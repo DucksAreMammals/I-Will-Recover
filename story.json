@@ -16,7 +16,7 @@
 	"anger_opening": [
 		{
 			"speaker": "internal",
-			"line": "YOU CAN'T TAKE HER AWAY FROM ME I WILL KILL YOU I WILL I SWEAR I HATE YOU I WILL KILL YOU YOU ARE"
+			"line": "YOU CAN'T TAKE HER AWAY FROM ME I WILL KILL YOU I WILL I SWEAR I HATE YOU I WILL KILL YOU"
 		},
 		{
 			"speaker": "self",
@@ -38,7 +38,7 @@
 	"bargaining_3": [
 		{
 			"speaker": "internal",
-			"line": "God, bring her back, and I'll never do anything wrong again. Give me her back and I'll never go to church. I'll never do anything wrong. Give me her back."
+			"line": "God, bring her back, and I'll never do anything wrong again. Give me her back and I'll go to church. I'll never do anything wrong. Give me her back."
 		}
 	],
 	"bargaining_4": [
@@ -66,7 +66,7 @@
 	"acceptance_bargaining": [
 		{
 			"speaker": "internal",
-			"line": "Please?"
+			"line": "Please, maybe?"
 		}
 	]
 }
