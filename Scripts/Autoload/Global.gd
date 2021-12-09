@@ -49,11 +49,6 @@ func _input(e):
 				debug_mode = not debug_mode
 				pos_in_konami = 0
 
-				if debug_mode:
-					print("debug mode enabled")
-				else:
-					print("debug mode disabled")
-
 		elif e.scancode == KONAMI[0]:
 			pos_in_konami = 1
 		else:
