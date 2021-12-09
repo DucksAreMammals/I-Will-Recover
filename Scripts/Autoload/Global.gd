@@ -25,7 +25,10 @@ func _process(_delta):
 	if Input.is_action_just_pressed("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 
-	if Input.is_action_just_pressed("debug_reset_save"):
+	if (
+		Input.is_action_just_pressed("debug_reset_save")
+		and (OS.is_debug_build() or OS.has_feature("Debug"))
+	):
 		level = 0
 		save_file()
 
