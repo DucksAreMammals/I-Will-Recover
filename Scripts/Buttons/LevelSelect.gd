@@ -9,8 +9,12 @@ func _ready():
 	if focus:
 		grab_focus()
 
+
+func _process(_delta):
 	if level_number > Global.level:
 		disabled = true
+	else:
+		disabled = false
 
 
 func _pressed():
