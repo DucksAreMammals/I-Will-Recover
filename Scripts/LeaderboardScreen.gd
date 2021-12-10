@@ -15,9 +15,9 @@ func _ready():
 # warning-ignore:return_value_discarded
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
 	$TimeLabel.text = (
-		_to_time(Global.get_time())
+		"Your time was: _to_time(Global.get_time())"
 		if Global.get_time() >= 0 and Global.time_valid
-		else "Time invalid"
+		else "Time invalid - In order to submit your time, you must start from the first level and play through the last level."
 	)
 	$Leaderboard.reload_leaderboard(10)
 

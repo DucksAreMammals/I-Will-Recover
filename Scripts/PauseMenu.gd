@@ -32,12 +32,5 @@ func _unpause():
 	get_tree().paused = false
 
 
-func _on_MenuButton_pressed():
-	FadeScreen.fade_in()
-	yield(FadeScreen, "AnimationFinished")
-#warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/Screens/Menu.tscn")
-
-
 func _on_ResumeButton_pressed():
 	_unpause()
