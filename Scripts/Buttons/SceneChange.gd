@@ -1,6 +1,12 @@
 extends Button
 
 export(String, FILE) var scene
+export var focus := false
+
+
+func _ready():
+	if focus:
+		grab_focus()
 
 
 func _pressed():

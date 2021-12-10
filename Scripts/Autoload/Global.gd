@@ -24,7 +24,7 @@ var time_valid = false
 
 func _ready():
 	set_pause_mode(Node.PAUSE_MODE_PROCESS)
-	
+
 	var file = File.new()
 
 	if file.file_exists("res://story.json"):
@@ -97,6 +97,7 @@ func end_timer():
 		end_time = OS.get_ticks_msec()
 	else:
 		end_time = -1
+
 
 func get_time():
 	if time_valid:

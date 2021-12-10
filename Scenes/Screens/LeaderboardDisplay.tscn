@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/LeaderboardDisplay.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Buttons/SceneChange.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Leaderboard.tscn" type="PackedScene" id=3]
 
 [node name="Leaderboard" type="Control"]
 anchor_right = 1.0
@@ -22,11 +23,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 scene = "res://Scenes/Screens/Menu.tscn"
+focus = true
 
-[node name="Leaderboard" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 10.0
-text = "High scores loading..."
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Leaderboard" parent="." instance=ExtResource( 3 )]
