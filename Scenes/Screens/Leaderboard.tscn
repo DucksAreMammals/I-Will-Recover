@@ -47,6 +47,9 @@ margin_right = 264.0
 margin_bottom = 80.0
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ErrorLabel" type="Label" parent="."]
 margin_left = 104.0

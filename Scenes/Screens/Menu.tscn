@@ -102,13 +102,27 @@ __meta__ = {
 }
 scene = "res://Scenes/Screens/Settings.tscn"
 
+[node name="SettingsButton2" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 232.0
+margin_top = 168.0
+margin_right = -104.0
+margin_bottom = -25.0
+text = "Leaderboard"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene = "res://Scenes/Screens/LeaderboardDisplay.tscn"
+
 [node name="Fullscreen" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 160.0
-margin_top = 184.0
-margin_right = -176.0
-margin_bottom = -9.0
+margin_left = 88.0
+margin_top = 168.0
+margin_right = -248.0
+margin_bottom = -25.0
 text = "Fullscreen"
 script = ExtResource( 2 )
 __meta__ = {

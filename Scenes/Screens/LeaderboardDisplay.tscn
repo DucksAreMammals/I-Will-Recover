@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/LeaderboardDisplay.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Buttons/SceneChange.gd" type="Script" id=2]
+
+[node name="Leaderboard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 176.0
+margin_right = 208.0
+margin_bottom = 200.0
+text = "Menu"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene = "res://Scenes/Screens/Menu.tscn"
+
+[node name="Leaderboard" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 10.0
+text = "High scores loading..."
