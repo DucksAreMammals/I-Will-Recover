@@ -8,6 +8,8 @@ var music_volume = 100
 
 var debug_mode = false
 
+var use_silentwolf = false
+
 var pos_in_konami = 0
 const KONAMI = [
 	KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_LEFT, KEY_RIGHT, KEY_B, KEY_A
