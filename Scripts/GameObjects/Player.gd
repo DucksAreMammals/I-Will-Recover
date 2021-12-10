@@ -29,7 +29,10 @@ func _ready():
 func _process(_delta):
 	var relative_position = get_canvas_transform().origin + global_position
 	$"../LevelCamera/Vignette".material.set_shader_param("player_x", relative_position.x / 400)
-	$"../LevelCamera/Vignette".material.set_shader_param("player_y", (relative_position.y + 87.5) / 400)
+	$"../LevelCamera/Vignette".material.set_shader_param(
+		"player_y", (relative_position.y + 87.5) / 400
+	)
+
 
 func _physics_process(_delta):
 	if not get_tree().paused:
@@ -71,7 +74,11 @@ func _set_grounded_time():
 
 func _jump():
 	if can_move:
-		if Input.is_action_just_pressed("up") and grounded_time + coyote_time > OS.get_ticks_msec():
+		if (
+			Input.is_action_just_pressed("up")
+			and grounded_y != 0
+			and grounded_time + coyote_time > OS.get_ticks_msec()
+		):
 			position.y = grounded_y
 			velocity.y = 0
 			acceleration.y = -jump_speed

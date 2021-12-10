@@ -11,7 +11,6 @@
 script = ExtResource( 5 )
 level_number = 3
 level_name = "4. Depression"
-section_max = null
 next_level = "res://Scenes/Screens/Levels/Acceptance.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
