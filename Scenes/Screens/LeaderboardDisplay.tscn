@@ -27,3 +27,6 @@ scene = "res://Scenes/Screens/Menu.tscn"
 margin_right = 40.0
 margin_bottom = 10.0
 text = "High scores loading..."
+__meta__ = {
+"_edit_use_anchors_": false
+}

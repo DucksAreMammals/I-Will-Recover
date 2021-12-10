@@ -17,9 +17,9 @@ margin_right = 228.0
 margin_bottom = 170.0
 text = "Reset"
 
-[node name="Leaderboard" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 10.0
+[node name="Leaderboard" type="RichTextLabel" parent="."]
+margin_right = 192.0
+margin_bottom = 224.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
