@@ -19,6 +19,7 @@ func _ready():
 		if Global.get_time() >= 0 and Global.time_valid
 		else "Time invalid"
 	)
+	$Leaderboard.reload_leaderboard(10)
 
 
 func _process(_delta):
