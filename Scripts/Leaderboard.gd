@@ -25,7 +25,7 @@ func _on_SubmitButton_pressed():
 		if Global.get_time() >= 0 and Global.time_valid:
 			name = $Name.text
 			if name.length() < 20 and name.length() >= 1 and $Name.text != "":
-				if name.count("?") + name.count("\n") <= 0:
+				if name.count("?") <= 0:
 					_contains_profanity(name)
 					yield(self, "checked")
 					if not has_profanity:
@@ -38,7 +38,7 @@ func _on_SubmitButton_pressed():
 					else:
 						$ErrorLable.text = "Name must not contains profanity"
 				else:
-					$ErrorLable.text = "Name must not contain ? or new lines"
+					$ErrorLable.text = "Name must not contain ?"
 			else:
 				$ErrorLable.text = "Name must be between 1 and 20 characters"
 		else:
