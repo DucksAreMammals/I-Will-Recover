@@ -3,6 +3,7 @@ extends Control
 signal checked
 
 var has_profanity = false
+var tried_submit = false
 
 
 func _ready():
@@ -20,8 +21,14 @@ func _ready():
 	)
 
 
+func _process(_delta):
+	$SubmitButton.disabled = tried_submit
+
+
 func _on_SubmitButton_pressed():
-	if Global.use_silentwolf:
+	if Global.use_silentwolf and not tried_submit:
+		tried_submit = true
+
 		if Global.get_time() >= 0 and Global.time_valid:
 			name = $Name.text
 			if name.length() < 20 and name.length() >= 1 and $Name.text != "":
@@ -37,12 +44,16 @@ func _on_SubmitButton_pressed():
 						_load_leaderboard()
 					else:
 						$ErrorLable.text = "Name must not contains profanity"
+						tried_submit = false
 				else:
 					$ErrorLable.text = "Name must not contain ?"
+					tried_submit = false
 			else:
 				$ErrorLable.text = "Name must be between 1 and 20 characters"
+				tried_submit = false
 		else:
 			$ErrorLabel.text = "Invalid time"
+			tried_submit = false
 
 
 func _load_leaderboard():
