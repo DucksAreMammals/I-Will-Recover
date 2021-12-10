@@ -10,13 +10,21 @@ var debug_mode = false
 
 var use_silentwolf = false
 
+var can_fullscreen = true
+
 var pos_in_konami = 0
 const KONAMI = [
 	KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_LEFT, KEY_RIGHT, KEY_B, KEY_A
 ]
 
+var start_time = INF
+var end_time = -1
+var time_valid = false
+
 
 func _ready():
+	set_pause_mode(Node.PAUSE_MODE_PROCESS)
+	
 	var file = File.new()
 
 	if file.file_exists("res://story.json"):
@@ -31,7 +39,7 @@ func _ready():
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("fullscreen"):
+	if Input.is_action_just_pressed("fullscreen") and can_fullscreen:
 		OS.window_fullscreen = !OS.window_fullscreen
 
 	if Input.is_action_just_pressed("debug_reset_save") and debug_mode:
@@ -49,6 +57,7 @@ func _input(e):
 			pos_in_konami += 1
 			if pos_in_konami == len(KONAMI):
 				debug_mode = not debug_mode
+				time_valid = false
 				pos_in_konami = 0
 
 		elif e.scancode == KONAMI[0]:
@@ -76,3 +85,21 @@ func _load_file():
 		file.close()
 	else:
 		save_file()
+
+
+func start_timer():
+	start_time = OS.get_ticks_msec()
+	time_valid = true if not debug_mode else false
+
+
+func end_timer():
+	if time_valid:
+		end_time = OS.get_ticks_msec()
+	else:
+		end_time = -1
+
+func get_time():
+	if time_valid:
+		return (end_time - start_time) / 1000.0
+	else:
+		return -1.0

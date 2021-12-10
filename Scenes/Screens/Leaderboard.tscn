@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Leaderboard.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Buttons/SceneChange.gd" type="Script" id=2]
+
+[node name="Leaderboard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubmitButton" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 144.0
+margin_right = 208.0
+margin_bottom = 168.0
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 176.0
+margin_right = 208.0
+margin_bottom = 200.0
+text = "Menu"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene = "res://Scenes/Screens/Menu.tscn"
+
+[node name="Leaderboard" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 10.0
+text = "High scores loading..."
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="TimeLabel" type="Label" parent="."]
+margin_left = 104.0
+margin_top = 64.0
+margin_right = 264.0
+margin_bottom = 80.0
+align = 1
+valign = 1
+
+[node name="ErrorLabel" type="Label" parent="."]
+margin_left = 104.0
+margin_top = 120.0
+margin_right = 264.0
+margin_bottom = 136.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="LineEdit" parent="."]
+margin_left = 104.0
+margin_top = 96.0
+margin_right = 264.0
+margin_bottom = 120.0
+
+[connection signal="pressed" from="SubmitButton" to="." method="_on_SubmitButton_pressed"]
+[connection signal="focus_entered" from="Name" to="." method="_on_Name_focus_entered"]
+[connection signal="focus_exited" from="Name" to="." method="_on_Name_focus_exited"]
+[connection signal="text_entered" from="Name" to="." method="_on_Name_text_entered"]

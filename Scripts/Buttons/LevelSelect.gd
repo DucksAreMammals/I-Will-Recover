@@ -18,6 +18,9 @@ func _process(_delta):
 
 
 func _pressed():
+	if level_number == 0:
+		Global.start_timer()
+
 	FadeScreen.fade_in()
 	yield(FadeScreen, "AnimationFinished")
 # warning-ignore:return_value_discarded
