@@ -23,6 +23,8 @@ PauseMenu="*res://Scenes/PauseMenu.tscn"
 FadeScreen="*res://Scenes/FadeScreen.tscn"
 AudioController="*res://Scenes/AudioController.tscn"
 FpsLabel="*res://Scenes/FpsLabel.tscn"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+ConfigureSilentWolf="*res://Scripts/Autoload/ConfigureSilentWolf.gd"
 
 [display]
 
