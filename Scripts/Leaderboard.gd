@@ -37,19 +37,20 @@ func _on_SubmitButton_pressed():
 					yield(self, "checked")
 					if not has_profanity:
 						$SubmitButton.disabled = true
+						$ErrorLabel.text = ""
 						yield(
 							SilentWolf.Scores.persist_score(name, Global.get_time()),
 							"sw_score_posted"
 						)
 						_load_leaderboard()
 					else:
-						$ErrorLable.text = "Name must not contains profanity"
+						$ErrorLabel.text = "Name must not contains profanity"
 						tried_submit = false
 				else:
-					$ErrorLable.text = "Name must not contain ?"
+					$ErrorLabel.text = "Name must not contain ?"
 					tried_submit = false
 			else:
-				$ErrorLable.text = "Name must be between 1 and 20 characters"
+				$ErrorLabel.text = "Name must be between 1 and 20 characters"
 				tried_submit = false
 		else:
 			$ErrorLabel.text = "Invalid time"
