@@ -1,21 +1,13 @@
 extends Node
 
 var story
-
 var level = 0
-
 var music_volume = 100
 
 var debug_mode = false
-
-var use_silentwolf = false
-
 var can_fullscreen = true
 
-var pos_in_konami = 0
-const KONAMI = [
-	KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_LEFT, KEY_RIGHT, KEY_B, KEY_A
-]
+var use_silentwolf = false
 
 var start_time = INF
 var end_time = -1
@@ -23,7 +15,13 @@ var time_valid = false
 
 var deaths = 0
 
+var pos_in_konami = 0
+const KONAMI = [
+	KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_LEFT, KEY_RIGHT, KEY_B, KEY_A
+]
+
 # TODO: Add speedrunner mode that shows a timer at the top of the screen
+# TODO: Add backgrounds for menus
 
 
 func _ready():
