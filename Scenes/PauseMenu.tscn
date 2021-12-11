@@ -73,8 +73,6 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Control"]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 10.0
 anchor_bottom = 5.6
 margin_left = 112.0
@@ -101,10 +99,10 @@ __meta__ = {
 [node name="ResumeButton" type="Button" parent="Control/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 56.0
-margin_top = 56.0
-margin_right = -56.0
-margin_bottom = -104.0
+margin_left = 53.0
+margin_top = 74.0
+margin_right = -53.0
+margin_bottom = -87.9999
 text = "Resume"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -113,10 +111,10 @@ __meta__ = {
 [node name="MenuButton" type="Button" parent="Control/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 56.0
-margin_top = 96.0
-margin_right = -56.0
-margin_bottom = -64.0
+margin_left = 53.0
+margin_top = 119.0
+margin_right = -53.0
+margin_bottom = -42.9999
 text = "Menu"
 script = ExtResource( 1 )
 __meta__ = {

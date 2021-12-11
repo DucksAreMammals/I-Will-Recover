@@ -13,20 +13,20 @@ __meta__ = {
 }
 
 [node name="SubmitButton" type="Button" parent="."]
-margin_left = 256.0
-margin_top = 96.0
-margin_right = 304.0
-margin_bottom = 120.0
+margin_left = 200.0
+margin_top = 100.0
+margin_right = 270.0
+margin_bottom = 130.0
 text = "Submit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MenuButton" type="Button" parent="."]
-margin_left = 256.0
-margin_top = 128.0
-margin_right = 304.0
-margin_bottom = 152.0
+margin_left = 290.0
+margin_top = 100.0
+margin_right = 360.0
+margin_bottom = 130.0
 text = "Menu"
 script = ExtResource( 2 )
 __meta__ = {
@@ -38,9 +38,9 @@ scene = "res://Scenes/Screens/Menu.tscn"
 
 [node name="TimeLabel" type="Label" parent="."]
 margin_left = 200.0
-margin_top = 8.0
+margin_top = 20.0
 margin_right = 360.0
-margin_bottom = 24.0
+margin_bottom = 35.0
 align = 1
 valign = 1
 autowrap = true
@@ -50,9 +50,9 @@ __meta__ = {
 
 [node name="ErrorLabel" type="Label" parent="."]
 margin_left = 200.0
-margin_top = 72.0
+margin_top = 75.0
 margin_right = 360.0
-margin_bottom = 88.0
+margin_bottom = 91.0
 align = 1
 valign = 1
 __meta__ = {
@@ -61,9 +61,9 @@ __meta__ = {
 
 [node name="Name" type="LineEdit" parent="."]
 margin_left = 200.0
-margin_top = 48.0
+margin_top = 50.0
 margin_right = 360.0
-margin_bottom = 72.0
+margin_bottom = 75.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
