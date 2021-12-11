@@ -23,6 +23,8 @@ var time_valid = false
 
 var deaths = 0
 
+# TODO: Add speedrunner mode that shows a timer at the top of the screen
+
 
 func _ready():
 	set_pause_mode(Node.PAUSE_MODE_PROCESS)
