@@ -8,3 +8,4 @@ func _ready():
 	PauseMenu.can_pause = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	Global.time_valid = false
+	Global.deaths = 0

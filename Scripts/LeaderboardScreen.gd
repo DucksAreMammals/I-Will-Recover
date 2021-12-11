@@ -20,6 +20,7 @@ func _ready():
 		else "Time invalid - In order to submit your time, you must start from the first level and play through the last level."
 	)
 	$Leaderboard.reload_leaderboard()
+	$DeathLabel.text = "Deaths: " + str(Global.deaths)
 
 
 func _process(_delta):

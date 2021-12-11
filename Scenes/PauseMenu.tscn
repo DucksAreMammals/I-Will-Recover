@@ -73,6 +73,8 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="Control"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 10.0
 anchor_bottom = 5.6
 margin_left = 112.0

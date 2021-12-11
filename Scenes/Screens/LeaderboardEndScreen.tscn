@@ -13,20 +13,20 @@ __meta__ = {
 }
 
 [node name="SubmitButton" type="Button" parent="."]
-margin_left = 200.0
-margin_top = 100.0
-margin_right = 270.0
-margin_bottom = 130.0
+margin_left = 205.0
+margin_top = 135.0
+margin_right = 275.0
+margin_bottom = 165.0
 text = "Submit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MenuButton" type="Button" parent="."]
-margin_left = 290.0
-margin_top = 100.0
-margin_right = 360.0
-margin_bottom = 130.0
+margin_left = 295.0
+margin_top = 135.0
+margin_right = 365.0
+margin_bottom = 165.0
 text = "Menu"
 script = ExtResource( 2 )
 __meta__ = {
@@ -37,10 +37,10 @@ scene = "res://Scenes/Screens/Menu.tscn"
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="TimeLabel" type="Label" parent="."]
-margin_left = 200.0
-margin_top = 20.0
-margin_right = 360.0
-margin_bottom = 35.0
+margin_left = 205.0
+margin_top = 55.0
+margin_right = 365.0
+margin_bottom = 70.0
 align = 1
 valign = 1
 autowrap = true
@@ -49,10 +49,10 @@ __meta__ = {
 }
 
 [node name="ErrorLabel" type="Label" parent="."]
-margin_left = 200.0
-margin_top = 75.0
-margin_right = 360.0
-margin_bottom = 91.0
+margin_left = 205.0
+margin_top = 110.0
+margin_right = 365.0
+margin_bottom = 126.0
 align = 1
 valign = 1
 __meta__ = {
@@ -60,10 +60,11 @@ __meta__ = {
 }
 
 [node name="Name" type="LineEdit" parent="."]
-margin_left = 200.0
-margin_top = 50.0
-margin_right = 360.0
-margin_bottom = 75.0
+margin_left = 205.0
+margin_top = 90.0
+margin_right = 365.0
+margin_bottom = 110.0
+placeholder_text = "Enter your name"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,6 +74,17 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = -232.0
 margin_bottom = -9.0
+
+[node name="DeathLabel" type="Label" parent="."]
+margin_left = 205.0
+margin_top = 40.0
+margin_right = 365.0
+margin_bottom = 55.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="SubmitButton" to="." method="_on_SubmitButton_pressed"]
 [connection signal="focus_entered" from="Name" to="." method="_on_Name_focus_entered"]

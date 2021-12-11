@@ -21,6 +21,8 @@ var start_time = INF
 var end_time = -1
 var time_valid = false
 
+var deaths = 0
+
 
 func _ready():
 	set_pause_mode(Node.PAUSE_MODE_PROCESS)

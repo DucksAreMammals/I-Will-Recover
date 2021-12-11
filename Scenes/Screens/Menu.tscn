@@ -46,9 +46,9 @@ scene = "res://Scenes/Screens/Levels/Bargaining.tscn"
 [node name="AcceptanceLevel" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 240.0
+margin_left = 315.0
 margin_top = 120.0
-margin_right = -90.0
+margin_right = -15.0
 margin_bottom = -75.0
 text = "Acceptance"
 script = ExtResource( 1 )
@@ -61,9 +61,9 @@ scene = "res://Scenes/Screens/Levels/Acceptance.tscn"
 [node name="DepressionLevel" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 315.0
+margin_left = 240.0
 margin_top = 120.0
-margin_right = -15.0
+margin_right = -90.0
 margin_bottom = -75.0
 text = "Depression"
 script = ExtResource( 1 )
