@@ -1,7 +1,11 @@
 extends Control
 
 
-func reload_leaderboard(num = 10):
+func _ready():
+	reload_leaderboard()
+
+
+func reload_leaderboard(num = 15):
 	if Global.use_silentwolf:
 		yield(SilentWolf.Scores.get_high_scores(0), "sw_scores_received")
 

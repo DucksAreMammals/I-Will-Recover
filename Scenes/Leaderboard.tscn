@@ -6,7 +6,7 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -240.0
-margin_bottom = -17.0
+margin_bottom = -27.0
 mouse_filter = 2
 script = ExtResource( 1 )
 __meta__ = {
@@ -15,13 +15,18 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 160.0
-margin_bottom = 208.0
+margin_bottom = 198.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Leaderboard" type="RichTextLabel" parent="Panel"]
-margin_right = 160.0
-margin_bottom = 208.0
+margin_right = 159.0
+margin_bottom = 198.0
+rect_scale = Vector2( 1.00773, 1 )
 bbcode_enabled = true
 text = "Loading..."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

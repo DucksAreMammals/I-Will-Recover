@@ -19,7 +19,7 @@ func _ready():
 		if Global.get_time() >= 0 and Global.time_valid
 		else "Time invalid - In order to submit your time, you must start from the first level and play through the last level."
 	)
-	$Leaderboard.reload_leaderboard(10)
+	$Leaderboard.reload_leaderboard()
 
 
 func _process(_delta):
