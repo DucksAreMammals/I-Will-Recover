@@ -37,21 +37,22 @@ scene = "res://Scenes/Screens/Menu.tscn"
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="TimeLabel" type="Label" parent="."]
-margin_left = 104.0
-margin_top = 64.0
-margin_right = 264.0
-margin_bottom = 80.0
+margin_left = 200.0
+margin_top = 8.0
+margin_right = 360.0
+margin_bottom = 24.0
 align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ErrorLabel" type="Label" parent="."]
-margin_left = 104.0
-margin_top = 120.0
-margin_right = 264.0
-margin_bottom = 136.0
+margin_left = 200.0
+margin_top = 72.0
+margin_right = 360.0
+margin_bottom = 88.0
 align = 1
 valign = 1
 __meta__ = {
@@ -63,6 +64,9 @@ margin_left = 200.0
 margin_top = 48.0
 margin_right = 360.0
 margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Leaderboard" parent="." instance=ExtResource( 3 )]
 margin_left = 8.0

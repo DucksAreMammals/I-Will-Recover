@@ -24,3 +24,4 @@ __meta__ = {
 margin_right = 160.0
 margin_bottom = 208.0
 bbcode_enabled = true
+text = "Loading..."

@@ -15,7 +15,7 @@ func _ready():
 # warning-ignore:return_value_discarded
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
 	$TimeLabel.text = (
-		"Your time was: _to_time(Global.get_time())"
+		"Your time was: " + _to_time(Global.get_time())
 		if Global.get_time() >= 0 and Global.time_valid
 		else "Time invalid - In order to submit your time, you must start from the first level and play through the last level."
 	)
@@ -43,7 +43,7 @@ func _on_SubmitButton_pressed():
 							SilentWolf.Scores.persist_score(name, Global.get_time()),
 							"sw_score_posted"
 						)
-						$leaderboard.reload_leaderboard()
+						$Leaderboard.reload_leaderboard()
 					else:
 						$ErrorLabel.text = "Name must not contains profanity"
 						tried_submit = false
