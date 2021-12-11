@@ -13,9 +13,9 @@ __meta__ = {
 }
 
 [node name="MenuButton" type="Button" parent="."]
-margin_left = 250.0
+margin_left = 265.0
 margin_top = 175.0
-margin_right = 320.0
+margin_right = 335.0
 margin_bottom = 205.0
 text = "Menu"
 script = ExtResource( 2 )
@@ -26,7 +26,7 @@ scene = "res://Scenes/Screens/Menu.tscn"
 focus = true
 
 [node name="Leaderboard" parent="." instance=ExtResource( 3 )]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = -232.0
-margin_bottom = -9.0
+margin_left = 5.0
+margin_top = 10.0
+margin_right = -195.0
+margin_bottom = -15.0

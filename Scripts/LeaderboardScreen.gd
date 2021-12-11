@@ -15,7 +15,7 @@ func _ready():
 # warning-ignore:return_value_discarded
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
 	$TimeLabel.text = (
-		"Your time was: " + _to_time(Global.get_time())
+		"Your time was: " + _to_time(Global.get_time(), false)
 		if Global.get_time() >= 0 and Global.time_valid
 		else "Time invalid - In order to submit your time, you must start from the first level and play through the last level."
 	)
@@ -33,7 +33,7 @@ func _on_SubmitButton_pressed():
 
 		if Global.get_time() >= 0 and Global.time_valid:
 			name = $Name.text
-			if name.length() < 20 and name.length() >= 1 and $Name.text != "":
+			if name.length() <= 16 and name.length() >= 1 and $Name.text != "":
 				if name.count("?") <= 0:
 					_contains_profanity(name)
 					yield(self, "checked")
@@ -41,7 +41,9 @@ func _on_SubmitButton_pressed():
 						$SubmitButton.disabled = true
 						$ErrorLabel.text = ""
 						yield(
-							SilentWolf.Scores.persist_score(name, Global.get_time()),
+							SilentWolf.Scores.persist_score(
+								name, Global.get_time(), "main", {"deaths": Global.deaths}
+							),
 							"sw_score_posted"
 						)
 						$Leaderboard.reload_leaderboard()
@@ -52,7 +54,7 @@ func _on_SubmitButton_pressed():
 					$ErrorLabel.text = "Name must not contain ?"
 					tried_submit = false
 			else:
-				$ErrorLabel.text = "Name must be between 1 and 20 characters"
+				$ErrorLabel.text = "Name must be between 1 and 16 characters"
 				tried_submit = false
 		else:
 			$ErrorLabel.text = "Invalid time"
@@ -86,8 +88,11 @@ func _on_Name_text_entered(_new_text):
 	_on_SubmitButton_pressed()
 
 
-func _to_time(seconds):
+func _to_time(seconds, cutoff = true):
 	var minutes = floor(seconds / 60)
 	seconds = seconds - (minutes * 60)
 
-	return str(minutes) + "m " + str(seconds) + "s"
+	if cutoff:
+		return str(minutes) + "m " + str(floor(seconds)) + "s"
+	else:
+		return str(minutes) + "m " + str(seconds) + "s"

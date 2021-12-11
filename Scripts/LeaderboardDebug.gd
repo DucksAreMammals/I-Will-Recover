@@ -10,7 +10,10 @@ func _on_ResetButton_pressed():
 
 
 func _on_SubmitButton_pressed():
-	yield(SilentWolf.Scores.persist_score("Test", 69420), "sw_score_posted")
+	yield(
+		SilentWolf.Scores.persist_score("Test", 69, "main", {"deaths": 420}),
+		"sw_score_posted"
+	)
 	$Leaderboard.reload_leaderboard(0)
 
 

@@ -13,9 +13,9 @@ __meta__ = {
 }
 
 [node name="SubmitButton" type="Button" parent="."]
-margin_left = 205.0
+margin_left = 220.0
 margin_top = 135.0
-margin_right = 275.0
+margin_right = 290.0
 margin_bottom = 165.0
 text = "Submit"
 __meta__ = {
@@ -23,9 +23,9 @@ __meta__ = {
 }
 
 [node name="MenuButton" type="Button" parent="."]
-margin_left = 295.0
+margin_left = 310.0
 margin_top = 135.0
-margin_right = 365.0
+margin_right = 380.0
 margin_bottom = 165.0
 text = "Menu"
 script = ExtResource( 2 )
@@ -37,9 +37,9 @@ scene = "res://Scenes/Screens/Menu.tscn"
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="TimeLabel" type="Label" parent="."]
-margin_left = 205.0
+margin_left = 225.0
 margin_top = 55.0
-margin_right = 365.0
+margin_right = 385.0
 margin_bottom = 70.0
 align = 1
 valign = 1
@@ -49,9 +49,9 @@ __meta__ = {
 }
 
 [node name="ErrorLabel" type="Label" parent="."]
-margin_left = 205.0
+margin_left = 220.0
 margin_top = 110.0
-margin_right = 365.0
+margin_right = 380.0
 margin_bottom = 126.0
 align = 1
 valign = 1
@@ -60,9 +60,9 @@ __meta__ = {
 }
 
 [node name="Name" type="LineEdit" parent="."]
-margin_left = 205.0
+margin_left = 220.0
 margin_top = 90.0
-margin_right = 365.0
+margin_right = 380.0
 margin_bottom = 110.0
 placeholder_text = "Enter your name"
 __meta__ = {
@@ -70,15 +70,15 @@ __meta__ = {
 }
 
 [node name="Leaderboard" parent="." instance=ExtResource( 3 )]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = -232.0
-margin_bottom = -9.0
+margin_left = 5.0
+margin_top = 10.0
+margin_right = -193.0
+margin_bottom = -15.0
 
 [node name="DeathLabel" type="Label" parent="."]
-margin_left = 205.0
+margin_left = 225.0
 margin_top = 40.0
-margin_right = 365.0
+margin_right = 385.0
 margin_bottom = 55.0
 align = 1
 valign = 1

@@ -133,7 +133,9 @@ func _unstick():
 
 
 func die():
-	Global.deaths += 1
+	if can_move:
+		Global.deaths += 1
+
 	can_move = false
 	$DeathParticleAnimation.play("Absorb")
 	yield($DeathParticleAnimation, "animation_finished")

@@ -47,5 +47,3 @@ margin_bottom = -19.0
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
 [connection signal="pressed" from="SubmitButton" to="." method="_on_SubmitButton_pressed"]
 [connection signal="pressed" from="ReloadButton" to="." method="_on_ReloadButton_pressed"]
-
-[editable path="Leaderboard"]
