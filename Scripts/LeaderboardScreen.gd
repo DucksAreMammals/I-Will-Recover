@@ -48,7 +48,7 @@ func _on_SubmitButton_pressed():
 						)
 						$Leaderboard.reload_leaderboard()
 					else:
-						$ErrorLabel.text = "Name must not contains profanity"
+						$ErrorLabel.text = "Name must not contain profanity"
 						tried_submit = false
 				else:
 					$ErrorLabel.text = "Name must not contain ?"

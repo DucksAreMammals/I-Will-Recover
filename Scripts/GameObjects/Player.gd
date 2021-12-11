@@ -21,6 +21,8 @@ var can_move := true
 
 onready var level = get_parent()
 
+# TODO: Make the player walk off screen when the level ends
+
 
 func _ready():
 	stuck_raycasts = [$StuckRay1, $StuckRay2, $StuckRay3, $StuckRay4]

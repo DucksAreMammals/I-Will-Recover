@@ -19,7 +19,7 @@ func reload_leaderboard(num = 15):
 			$Panel/LeaderboardTimes.text += _to_time(score.score) + "\n"
 			$Panel/LeaderboardDeaths.text += str(score.metadata["deaths"]) + "\n"
 	else:
-		$Panel/Leaderboard.text = "Error: You are not using a build with my api keys so the leaderboard will not work."
+		$Panel/LeaderboardNames.text = "Error: You are not using a build with my api keys so the leaderboard will not work."
 
 
 func _to_time(seconds, cutoff = true):
