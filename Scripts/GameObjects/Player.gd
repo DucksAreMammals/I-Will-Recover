@@ -18,14 +18,14 @@ var facing_right := true
 var stuck_raycasts
 
 var can_move := true
+var level_ended := false
 
 onready var level = get_parent()
-
-# TODO: Make the player walk off screen when the level ends
 
 
 func _ready():
 	stuck_raycasts = [$StuckRay1, $StuckRay2, $StuckRay3, $StuckRay4]
+	$"../LevelCamera/Vignette".connect("win", self, "_win")
 
 
 func _process(_delta):
@@ -63,7 +63,7 @@ func _get_acceleration():
 			acceleration.x += -acceleration_speed * acceleration_speed
 			facing_right = false
 
-		if Input.is_action_pressed("right"):
+		if Input.is_action_pressed("right") or level_ended:
 			acceleration.x += acceleration_speed * acceleration_speed
 			facing_right = true
 
@@ -135,13 +135,16 @@ func _unstick():
 
 
 func die():
-	if can_move:
-		Global.deaths += 1
+	if not level_ended:
+		if can_move:
+			Global.deaths += 1
 
-	can_move = false
-	$DeathParticleAnimation.play("Absorb")
-	yield($DeathParticleAnimation, "animation_finished")
-	can_move = true
+		can_move = false
+		$DeathParticleAnimation.play("Absorb")
+		yield($DeathParticleAnimation, "animation_finished")
+		can_move = true
+	else:
+		get_tree().paused = true
 
 
 func tween_to_position(duration):
@@ -156,3 +159,7 @@ func tween_to_position(duration):
 	)
 
 	$Tween.start()
+
+
+func _win():
+	level_ended = true

@@ -48,7 +48,6 @@ func _next_level():
 	if level_number == 4:
 		Global.end_timer()
 
-	get_tree().paused = true
 	PauseMenu.can_pause = false
 	FadeScreen.set_text("")
 	FadeScreen.fade_in()
