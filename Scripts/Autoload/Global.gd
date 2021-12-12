@@ -21,8 +21,6 @@ const KONAMI = [
 	KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_LEFT, KEY_RIGHT, KEY_B, KEY_A
 ]
 
-# TODO: Add backgrounds for menus
-
 
 func _ready():
 	set_pause_mode(Node.PAUSE_MODE_PROCESS)
