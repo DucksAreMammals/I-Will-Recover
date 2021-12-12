@@ -26,7 +26,7 @@ onready var level = get_parent()
 func _ready():
 	stuck_raycasts = [$StuckRay1, $StuckRay2, $StuckRay3, $StuckRay4]
 #warning-ignore:return_value_discarded
-	$"../LevelCamera/Vignette".connect("win", self, "_win")
+	$"../LevelCamera".connect("win", self, "_win")
 
 
 func _process(_delta):
@@ -50,6 +50,9 @@ func _physics_process(_delta):
 		_collide()
 		_apply_animation()
 		_unstick()
+
+	if Input.is_action_just_pressed("debug_kill") and Global.debug_mode:
+		die()
 
 
 func _apply_friction():
