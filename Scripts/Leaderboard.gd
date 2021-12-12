@@ -16,17 +16,7 @@ func reload_leaderboard(num = 15):
 		for i in amount:
 			var score = SilentWolf.Scores.scores[num_of_scores - i - 1]
 			$Panel/LeaderboardNames.text += score.player_name + "\n"
-			$Panel/LeaderboardTimes.text += _to_time(score.score) + "\n"
+			$Panel/LeaderboardTimes.text += Global.to_time(score.score) + "\n"
 			$Panel/LeaderboardDeaths.text += str(score.metadata["deaths"]) + "\n"
 	else:
 		$Panel/LeaderboardNames.text = "Error: You are not using a build with my api keys so the leaderboard will not work."
-
-
-func _to_time(seconds, cutoff = true):
-	var minutes = floor(seconds / 60)
-	seconds = seconds - (minutes * 60)
-
-	if cutoff:
-		return str(minutes) + "m " + str(floor(seconds)) + "s"
-	else:
-		return str(minutes) + "m " + str(seconds) + "s"

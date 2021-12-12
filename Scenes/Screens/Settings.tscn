@@ -28,6 +28,14 @@ margin_bottom = 32.0
 text = "Music Volume:"
 valign = 1
 
+[node name="Label2" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 104.0
+margin_bottom = 64.0
+text = "Speedrun Mode:"
+valign = 1
+
 [node name="MenuButton" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,4 +50,14 @@ __meta__ = {
 }
 scene = "res://Scenes/Screens/Menu.tscn"
 
+[node name="SpeedrunBox" type="CheckBox" parent="."]
+margin_left = 108.0
+margin_top = 32.0
+margin_right = 132.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="value_changed" from="MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="toggled" from="SpeedrunBox" to="." method="_on_SpeedrunBox_toggled"]

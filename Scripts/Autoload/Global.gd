@@ -1,26 +1,26 @@
 extends Node
 
 var story
-var level = 0
-var music_volume = 100
+var level := 0
+var music_volume := 100
+var speedrun_mode := false
 
-var debug_mode = false
-var can_fullscreen = true
+var debug_mode := false
+var can_fullscreen := true
 
-var use_silentwolf = false
+var use_silentwolf := false
 
-var start_time = INF
-var end_time = -1
-var time_valid = false
+var start_time := 0.0
+var end_time := -1.0
+var time_valid := false
 
-var deaths = 0
+var deaths := 0
 
-var pos_in_konami = 0
+var pos_in_konami := 0
 const KONAMI = [
 	KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_LEFT, KEY_RIGHT, KEY_B, KEY_A
 ]
 
-# TODO: Add speedrunner mode that shows a timer at the top of the screen
 # TODO: Add backgrounds for menus
 
 
@@ -74,6 +74,7 @@ func save_file():
 	file.open("user://save", File.WRITE)
 	file.store_var(level)
 	file.store_var(music_volume)
+	file.store_var(speedrun_mode)
 	file.close()
 
 
@@ -84,6 +85,7 @@ func _load_file():
 		file.open("user://save", File.READ)
 		level = file.get_var()
 		music_volume = file.get_var()
+		speedrun_mode = file.get_var()
 		file.close()
 	else:
 		save_file()
@@ -101,8 +103,21 @@ func end_timer():
 		end_time = -1
 
 
-func get_time():
+func get_time(use_end = true):
 	if time_valid:
-		return (end_time - start_time) / 1000.0
+		if use_end:
+			return (end_time - start_time) / 1000.0
+		else:
+			return (OS.get_ticks_msec() - start_time) / 1000.0
 	else:
 		return -1.0
+
+
+func to_time(seconds, cutoff = true):
+	var minutes = floor(seconds / 60)
+	seconds = seconds - (minutes * 60)
+
+	if cutoff:
+		return str(minutes) + "m " + str(floor(seconds)) + "s"
+	else:
+		return str(minutes) + "m " + str(seconds) + "s"

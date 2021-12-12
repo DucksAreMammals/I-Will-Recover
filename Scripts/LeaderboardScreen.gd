@@ -15,12 +15,13 @@ func _ready():
 # warning-ignore:return_value_discarded
 	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
 	$TimeLabel.text = (
-		"Your time was: " + _to_time(Global.get_time(), false)
+		"Your time was: " + Global.to_time(Global.get_time(), false)
 		if Global.get_time() >= 0 and Global.time_valid
 		else "Time invalid - In order to submit your time, you must start from the first level and play through the last level."
 	)
 	$Leaderboard.reload_leaderboard()
 	$DeathLabel.text = "Deaths: " + str(Global.deaths)
+	SpeedrunLabel.show_label = false
 
 
 func _process(_delta):
@@ -86,13 +87,3 @@ func _on_Name_focus_exited():
 
 func _on_Name_text_entered(_new_text):
 	_on_SubmitButton_pressed()
-
-
-func _to_time(seconds, cutoff = true):
-	var minutes = floor(seconds / 60)
-	seconds = seconds - (minutes * 60)
-
-	if cutoff:
-		return str(minutes) + "m " + str(floor(seconds)) + "s"
-	else:
-		return str(minutes) + "m " + str(seconds) + "s"
