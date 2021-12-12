@@ -102,7 +102,7 @@ __meta__ = {
 }
 scene = "res://Scenes/Screens/Settings.tscn"
 
-[node name="SettingsButton2" type="Button" parent="."]
+[node name="LeaderboardButton" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 240.0

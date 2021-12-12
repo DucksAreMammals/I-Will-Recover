@@ -52,9 +52,9 @@ scene = "res://Scenes/Screens/Menu.tscn"
 
 [node name="SpeedrunBox" type="CheckBox" parent="."]
 margin_left = 108.0
-margin_top = 32.0
+margin_top = 36.0
 margin_right = 132.0
-margin_bottom = 64.0
+margin_bottom = 60.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
