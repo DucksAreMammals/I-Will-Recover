@@ -25,6 +25,7 @@ onready var level = get_parent()
 
 func _ready():
 	stuck_raycasts = [$StuckRay1, $StuckRay2, $StuckRay3, $StuckRay4]
+#warning-ignore:return_value_discarded
 	$"../LevelCamera/Vignette".connect("win", self, "_win")
 
 
