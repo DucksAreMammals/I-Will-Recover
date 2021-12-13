@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/LeaderboardScreen.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Buttons/SceneChange.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Leaderboard.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fonts/LinLibertine.tres" type="DynamicFont" id=4]
 
 [node name="Leaderboard" type="Control"]
 anchor_right = 1.0
@@ -14,9 +15,10 @@ __meta__ = {
 
 [node name="SubmitButton" type="Button" parent="."]
 margin_left = 220.0
-margin_top = 135.0
+margin_top = 145.0
 margin_right = 290.0
-margin_bottom = 165.0
+margin_bottom = 175.0
+rect_pivot_offset = Vector2( 35, -100 )
 text = "Submit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -24,9 +26,9 @@ __meta__ = {
 
 [node name="MenuButton" type="Button" parent="."]
 margin_left = 310.0
-margin_top = 135.0
+margin_top = 145.0
 margin_right = 380.0
-margin_bottom = 165.0
+margin_bottom = 175.0
 text = "Menu"
 script = ExtResource( 2 )
 __meta__ = {
@@ -37,10 +39,10 @@ scene = "res://Scenes/Screens/Menu.tscn"
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [node name="TimeLabel" type="Label" parent="."]
-margin_left = 225.0
-margin_top = 55.0
-margin_right = 385.0
-margin_bottom = 70.0
+margin_left = 220.0
+margin_top = 65.0
+margin_right = 380.0
+margin_bottom = 80.0
 align = 1
 valign = 1
 autowrap = true
@@ -50,9 +52,9 @@ __meta__ = {
 
 [node name="ErrorLabel" type="Label" parent="."]
 margin_left = 220.0
-margin_top = 110.0
+margin_top = 120.0
 margin_right = 380.0
-margin_bottom = 126.0
+margin_bottom = 136.0
 align = 1
 valign = 1
 __meta__ = {
@@ -61,9 +63,9 @@ __meta__ = {
 
 [node name="Name" type="LineEdit" parent="."]
 margin_left = 220.0
-margin_top = 90.0
+margin_top = 100.0
 margin_right = 380.0
-margin_bottom = 110.0
+margin_bottom = 120.0
 placeholder_text = "Enter your name"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -76,10 +78,22 @@ margin_right = -193.0
 margin_bottom = -15.0
 
 [node name="DeathLabel" type="Label" parent="."]
-margin_left = 225.0
-margin_top = 40.0
-margin_right = 385.0
-margin_bottom = 55.0
+margin_left = 220.0
+margin_top = 50.0
+margin_right = 380.0
+margin_bottom = 65.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 205.0
+margin_right = 400.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 4 )
+text = "Leaderboard"
 align = 1
 valign = 1
 __meta__ = {

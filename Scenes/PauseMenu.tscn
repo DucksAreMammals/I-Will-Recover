@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Buttons/SceneChange.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/LinLibertine.tres" type="DynamicFont" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Fade In"
@@ -91,6 +92,7 @@ anchor_right = 1.0
 anchor_bottom = 0.167
 margin_bottom = -0.064003
 rect_pivot_offset = Vector2( 32, 48 )
+custom_fonts/font = ExtResource( 3 )
 text = "Pause"
 align = 1
 valign = 1
