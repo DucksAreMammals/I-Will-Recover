@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Devcember"
+config/name="I Will Recover"
 run/main_scene="res://Scenes/Screens/Menu.tscn"
 boot_splash/image="res://Splash.png"
 boot_splash/bg_color=Color( 1, 0.984314, 0.854902, 1 )
