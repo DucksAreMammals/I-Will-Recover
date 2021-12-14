@@ -1,4 +1,4 @@
-# Recovery (Working title)
+# I Will Recover
 
 This is a game I made for the Devcember Game Jam. It is based off of the five stages of grief: Denial, anger, bargaining, depression, and acceptance. The story is conveyed both in traditional storytelling sense with the text directly on the screen, and in the level design.
 
