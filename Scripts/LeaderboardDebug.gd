@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	$Leaderboard.reload_leaderboard(0)
+	$Leaderboard.reload_leaderboard(0, true)
 
 
 func _on_ResetButton_pressed():
@@ -14,8 +14,8 @@ func _on_SubmitButton_pressed():
 		SilentWolf.Scores.persist_score("Test", 69, "main", {"deaths": 420}),
 		"sw_score_posted"
 	)
-	$Leaderboard.reload_leaderboard(0)
+	$Leaderboard.reload_leaderboard(0, true)
 
 
 func _on_ReloadButton_pressed():
-	$Leaderboard.reload_leaderboard(0)
+	$Leaderboard.reload_leaderboard(0, true)

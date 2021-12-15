@@ -1,7 +1,7 @@
 extends Control
 
 
-func reload_leaderboard(num = 15):
+func reload_leaderboard(num = 15, do_print = false):
 	if Global.use_silentwolf:
 		yield(SilentWolf.Scores.get_high_scores(0), "sw_scores_received")
 
@@ -18,5 +18,16 @@ func reload_leaderboard(num = 15):
 			$Panel/LeaderboardNames.text += score.player_name + "\n"
 			$Panel/LeaderboardTimes.text += Global.to_time(score.score) + "\n"
 			$Panel/LeaderboardDeaths.text += str(score.metadata["deaths"]) + "\n"
+
+			if do_print:
+				print(
+					(
+						score.player_name
+						+ " "
+						+ Global.to_time(score.score)
+						+ " "
+						+ str(score.metadata["deaths"])
+					)
+				)
 	else:
 		$Panel/LeaderboardNames.text = "Error: You are not using a build with my api keys so the leaderboard will not work."
