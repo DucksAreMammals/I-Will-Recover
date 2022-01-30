@@ -1,5 +1,9 @@
 # I Will Recover
 
+![GitHub last commit](https://img.shields.io/github/last-commit/DucksAreMammals/I-Will-Recover?style=flat)
+![GitHub repo size](https://img.shields.io/github/repo-size/DucksAreMammals/I-Will-Recover?style=flat)
+![Lines of code](https://img.shields.io/tokei/lines/github/DucksAreMammals/I-Will-Recover?style=flat)
+
 This is a game I made for the Devcember Game Jam. It is based off of the five stages of grief: Denial, anger, bargaining, depression, and acceptance. The story is conveyed both in traditional storytelling sense with the text directly on the screen, and in the level design.
 
 ## Controls:
